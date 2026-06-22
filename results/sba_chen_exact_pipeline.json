@@ -1,0 +1,95 @@
+{
+  "overall_micro": 0.8223062381852552,
+  "overall_macro": 0.8251226053639847,
+  "per_day": {
+    "OOD1": 0.876,
+    "OOD10": 0.963,
+    "OOD2": 0.807,
+    "OOD3": 0.8812260536398467,
+    "OOD4": 0.758,
+    "OOD5": 0.782,
+    "OOD6": 0.839,
+    "OOD7": 0.798,
+    "OOD8": 0.788,
+    "OOD9": 0.759
+  },
+  "details": {
+    "OOD1": {
+      "n_images": 1000,
+      "accuracy": 0.876,
+      "correct": 876,
+      "total": 1000
+    },
+    "OOD10": {
+      "n_images": 1000,
+      "accuracy": 0.963,
+      "correct": 963,
+      "total": 1000
+    },
+    "OOD2": {
+      "n_images": 1000,
+      "accuracy": 0.807,
+      "correct": 807,
+      "total": 1000
+    },
+    "OOD3": {
+      "n_images": 522,
+      "accuracy": 0.8812260536398467,
+      "correct": 460,
+      "total": 522
+    },
+    "OOD4": {
+      "n_images": 1000,
+      "accuracy": 0.758,
+      "correct": 758,
+      "total": 1000
+    },
+    "OOD5": {
+      "n_images": 1000,
+      "accuracy": 0.782,
+      "correct": 782,
+      "total": 1000
+    },
+    "OOD6": {
+      "n_images": 1000,
+      "accuracy": 0.839,
+      "correct": 839,
+      "total": 1000
+    },
+    "OOD7": {
+      "n_images": 1000,
+      "accuracy": 0.798,
+      "correct": 798,
+      "total": 1000
+    },
+    "OOD8": {
+      "n_images": 1000,
+      "accuracy": 0.788,
+      "correct": 788,
+      "total": 1000
+    },
+    "OOD9": {
+      "n_images": 1000,
+      "accuracy": 0.759,
+      "correct": 759,
+      "total": 1000
+    }
+  },
+  "config": {
+    "variant": "sba",
+    "models": [
+      "/home/sreenath/research-space/PlanktonShift/results/finetune_chen_saa/model_01_finetuned_v4.pth",
+      "/home/sreenath/research-space/PlanktonShift/results/finetune_chen_saa/model_02_finetuned_v4.pth",
+      "/home/sreenath/research-space/PlanktonShift/results/finetune_chen_saa/model_03_finetuned_v4.pth"
+    ],
+    "tta": true,
+    "tta_angles": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "ensemble": "geometric_mean",
+    "preprocessing": "Chen_ResizeWithProportions(128)->Resize(224)"
+  }
+}

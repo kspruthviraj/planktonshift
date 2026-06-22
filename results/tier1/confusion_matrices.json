@@ -1,0 +1,73 @@
+{
+  "OOD1": {
+    "accuracy": 0.877,
+    "n_images": 1000,
+    "per_class_acc": {
+      "aphanizomenon": 1.0,
+      "asplanchna": 0.9642857142857143,
+      "bosmina": 0.0,
+      "ceratium": 1.0,
+      "conochilus": 1.0,
+      "cyclops": 0.96,
+      "daphnia": 1.0,
+      "daphnia_skins": 1.0,
+      "dinobryon": 0.9780701754385965,
+      "eudiaptomus": 1.0,
+      "keratella_cochlearis": 1.0,
+      "keratella_quadrata": 1.0,
+      "nauplius": 0.9310344827586207,
+      "paradileptus": 1.0,
+      "rotifers": 0.9,
+      "synchaeta": 1.0,
+      "trichocerca": 0.0,
+      "unknown": 0.26666666666666666,
+      "uroglena": 1.0
+    }
+  },
+  "OOD5": {
+    "accuracy": 0.785,
+    "n_images": 1000,
+    "per_class_acc": {
+      "aphanizomenon": 1.0,
+      "asplanchna": 0.984375,
+      "bosmina": 0.0,
+      "ceratium": 1.0,
+      "chaoborus": 1.0,
+      "conochilus": 1.0,
+      "copepod_skins": 0.0,
+      "cyclops": 0.9814814814814815,
+      "daphnia": 0.9761904761904762,
+      "daphnia_skins": 1.0,
+      "dinobryon": 0.96875,
+      "eudiaptomus": 0.2,
+      "keratella_quadrata": 1.0,
+      "nauplius": 0.96,
+      "polyarthra": 0.325,
+      "rotifers": 0.9735772357723578,
+      "synchaeta": 1.0,
+      "trichocerca": 0.0,
+      "unknown": 0.14917127071823205
+    }
+  },
+  "OOD10": {
+    "accuracy": 0.969,
+    "n_images": 1000,
+    "per_class_acc": {
+      "asplanchna": 1.0,
+      "cyclops": 0.8333333333333334,
+      "daphnia": 1.0,
+      "daphnia_skins": 1.0,
+      "dinobryon": 0.5,
+      "eudiaptomus": 1.0,
+      "filament": 0.9863301787592008,
+      "fish": 0.0,
+      "keratella_quadrata": 1.0,
+      "maybe_cyano": 0.0,
+      "nauplius": 1.0,
+      "rotifers": 0.5,
+      "synchaeta": 1.0,
+      "unknown": 0.45,
+      "unknown_plankton": 0.5
+    }
+  }
+}

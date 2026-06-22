@@ -1,0 +1,89 @@
+{
+  "overall_micro": 0.8178954001260239,
+  "overall_macro": 0.8205563218390803,
+  "per_day": {
+    "OOD1": 0.871,
+    "OOD10": 0.966,
+    "OOD2": 0.821,
+    "OOD3": 0.8735632183908046,
+    "OOD4": 0.749,
+    "OOD5": 0.774,
+    "OOD6": 0.843,
+    "OOD7": 0.767,
+    "OOD8": 0.796,
+    "OOD9": 0.745
+  },
+  "details": {
+    "OOD1": {
+      "n_images": 1000,
+      "accuracy": 0.871,
+      "correct": 871,
+      "total": 1000
+    },
+    "OOD10": {
+      "n_images": 1000,
+      "accuracy": 0.966,
+      "correct": 966,
+      "total": 1000
+    },
+    "OOD2": {
+      "n_images": 1000,
+      "accuracy": 0.821,
+      "correct": 821,
+      "total": 1000
+    },
+    "OOD3": {
+      "n_images": 522,
+      "accuracy": 0.8735632183908046,
+      "correct": 456,
+      "total": 522
+    },
+    "OOD4": {
+      "n_images": 1000,
+      "accuracy": 0.749,
+      "correct": 749,
+      "total": 1000
+    },
+    "OOD5": {
+      "n_images": 1000,
+      "accuracy": 0.774,
+      "correct": 774,
+      "total": 1000
+    },
+    "OOD6": {
+      "n_images": 1000,
+      "accuracy": 0.843,
+      "correct": 843,
+      "total": 1000
+    },
+    "OOD7": {
+      "n_images": 1000,
+      "accuracy": 0.767,
+      "correct": 767,
+      "total": 1000
+    },
+    "OOD8": {
+      "n_images": 1000,
+      "accuracy": 0.796,
+      "correct": 796,
+      "total": 1000
+    },
+    "OOD9": {
+      "n_images": 1000,
+      "accuracy": 0.745,
+      "correct": 745,
+      "total": 1000
+    }
+  },
+  "config": {
+    "models": [
+      "/home/sreenath/research-space/PlanktonShift/data/chen_models/beit_models/trained_BEiT_models/trained_models/01",
+      "/home/sreenath/research-space/PlanktonShift/data/chen_models/beit_models/trained_BEiT_models/trained_models/02",
+      "/home/sreenath/research-space/PlanktonShift/data/chen_models/beit_models/trained_BEiT_models/trained_models/03"
+    ],
+    "tta": false,
+    "tta_angles": null,
+    "ensemble": "geometric_mean",
+    "preprocessing": "Chen_ResizeWithProportions(128)->Resize(224)"
+  }
+}

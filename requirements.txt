@@ -1,0 +1,36 @@
+# PlanktonShift — Reproducibility Requirements
+# ============================================
+# Generated from working environment (Jun 2026).
+# Install: pip install -r requirements.txt
+
+# Core ML
+torch==2.12.0
+torchvision==0.27.0
+torchmetrics==1.9.0
+pytorch-lightning==2.6.5
+
+# Computer Vision
+timm==1.0.27
+transformers==5.10.2
+Pillow==12.2.0
+albumentations==2.0.8
+
+# Scientific Computing
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.2
+scikit-image>=0.20
+
+# Visualization
+matplotlib>=3.7
+
+# Utilities
+tqdm>=4.65
+umap-learn>=0.5
+
+# RAG/VLM (optional — only needed for VLM experiments)
+# vLLM (for Qwen2.5-VL-32B inference)
+
+# RF-DETR (optional — only needed for detection experiments)
+# rfdetr>=1.7.0
+# pycocotools>=2.0
