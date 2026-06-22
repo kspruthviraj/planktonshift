@@ -1,16 +1,24 @@
 # Why Plankton Classifiers Fail Across Imaging Systems
 
-## What This Project Does
+## How This Project Started
 
-When we image plankton with different cameras — an Imaging FlowCytobot (IFCB) at Woods Hole, a ZooScan flatbed scanner in Villefranche, or a field camera at Lake Greifensee — the images look very different. A classifier trained on one camera fails badly on another (often losing 50-70% accuracy). This project explains *why* that happens and provides tools to fix it.
+This project began with a bug hunt. We noticed that plankton classifiers trained at Eawag were producing inconsistent results across seemingly identical runs. The culprit: a routine `pip install --upgrade Pillow` had changed the default image resampling filter from nearest-neighbour to bicubic interpolation. **49% of all pixels** in our plankton images were silently altered — not by any change in the biology, the water, or the camera, but by a software library update.
 
-**Key finding:** We discovered that plankton images carry two types of information in different "frequency bands" (think of it like separating the image into layers):
+We quantified this "silent pipeline drift" and found pixel-level residuals up to 0.54 (out of 1.0), comparable in magnitude to adversarial attacks used to fool deep learning models. This raised a question: if a library update can act like an adversarial attack, what about the differences between entire imaging systems?
+
+That question led us to decompose plankton images into frequency layers using Fourier analysis, and what we found changed how we think about cross-instrument plankton monitoring.
+
+## What We Discovered
+
+Plankton images carry two types of information in different "frequency bands" (think of it like separating the image into layers):
 - **Low-frequency layers** carry the biological shape — the features taxonomists use to identify species (body outline, spines, shell shape)
 - **Mid-frequency layers** carry the instrument signature — the lighting, contrast, and background artifacts specific to each camera
 
-We proved this by training classifiers on images where we kept only certain frequency layers. When we kept only low frequencies, the classifier could still identify species (43.8% accuracy). When we kept only mid frequencies, it could identify which *camera* took the image (92.6% accuracy) but not the species.
+We proved this by training classifiers on images where we kept only certain frequency layers:
+- **Low frequencies only**: classifier identifies species (43.8% accuracy) but not the camera
+- **Mid frequencies only**: classifier identifies the camera (92.6% accuracy) but not the species
 
-This insight lets us build better classifiers by augmenting training images in the frequency bands where instruments differ most.
+This separation is causal, not just correlational. And it lets us build better classifiers by augmenting training images in the frequency bands where instruments differ most, improving cross-instrument transfer by +5.9% to +11.6%.
 
 ## What You Need
 
@@ -51,8 +59,7 @@ python reproduce.py --phase 1
 │   ├── bootstrap_confidence_intervals.py  # Statistical confidence
 │   ├── confusion_matrices.py       # Which species are hardest to classify?
 │   ├── segment_plankton.py         # Segment organisms from background
-│   ├── generate_figures.py         # Make figures from results
-│   └── generate_graphical_abstract.py
+│   └── train_cross_instrument_sba.py   # Train classifiers with SBA
 │
 ├── figures/                        # Pre-generated figures
 ├── results/                        # Pre-computed results (JSON files)
@@ -63,18 +70,26 @@ python reproduce.py --phase 1
 
 ## The Experiments
 
-### 1. Fourier Analysis — How Do Cameras Differ?
+### 1. Silent Pipeline Drift — The Pillow Library Problem
+
+**Script:** `pillow_version_impact.py`
+
+This is where the project started. We discovered that a routine Pillow library update (6.x → 7.0) changed the default resampling filter from nearest-neighbour to bicubic interpolation. This silently alters 49% of all pixels in plankton images, with residuals up to 0.54 — comparable to adversarial attacks.
+
+We then tested whether this pixel-level change affects classification accuracy. Bicubic actually *improves* accuracy by +1.05%, but the change itself breaks reproducibility: identical code produces different results depending on the installed library version. For long-term monitoring, this is more damaging than a marginal accuracy change — it breaks temporal comparability.
+
+### 2. Fourier Analysis — How Do Cameras Differ?
 
 **Script:** `fourier_shift_analysis.py`
 
-We take plankton images from three cameras (IFCB, ZooScan, DSPC) and decompose them into frequency layers using a 2D Fourier Transform. Then we measure:
+The Pillow discovery led us to ask: if a library update can act like an adversarial attack, what about differences between entire imaging systems? We take plankton images from three cameras (IFCB, ZooScan, DSPC) and decompose them into frequency layers using a 2D Fourier Transform. Then we measure:
 - How much each frequency layer differs between cameras (the "shift spectrum")
 - How well a simple classifier can tell which camera took an image from each layer
 - How much species-identifying information each layer carries
 
 **Key result:** A logistic regression on frequency features identifies the source camera with 83.1% accuracy.
 
-### 2. Frequency Masking — Proving Causation
+### 3. Frequency Masking — Proving Causation
 
 **Script:** `frequency_masking_causality.py`
 
@@ -85,7 +100,7 @@ To prove that low frequencies carry species info and mid frequencies carry camer
 
 This is the causal experiment that proves our theory.
 
-### 3. SBA Augmentation — Making Classifiers Robust
+### 4. SBA Augmentation — Making Classifiers Robust
 
 **Script:** `spectral_augmentation.py`, `train_cross_instrument_sba.py`
 
@@ -93,19 +108,11 @@ Spectral Band Adversarial (SBA) augmentation adds noise to the frequency layers 
 
 **Key result:** SBA improves transfer from IFCB to ZooScan by +5.9% (46.7% → 52.6%) and from ZooScan to IFCB by +11.6%.
 
-### 4. Baseline OOD Reproduction
+### 5. Baseline OOD Reproduction
 
 **Script:** `replicate_baseline_ood.py`
 
 Reproduces Chen et al.'s 83% out-of-distribution accuracy on the ZooLake temporal benchmark (10 deployment days). Uses their exact preprocessing pipeline (proportional padding with black borders).
-
-### 5. Pillow Version Impact
-
-**Script:** `pillow_version_impact.py`
-
-Tests whether changing the Pillow library version (6.x → 7.0) affects classification accuracy. The resampling filter changed from nearest-neighbour to bicubic, which alters 49% of all pixels.
-
-**Key result:** Bicubic actually *improves* accuracy by +1.05%, but the change itself breaks reproducibility.
 
 ### 6. Ecological Impact
 
