@@ -64,7 +64,7 @@ class PlanktonDataset(Dataset):
         return image, label, cls_name
 
 
-class SAATransform:
+class SBATransform:
     def __init__(self, shift_spectrum=None):
         self.aug = SpectralAugmentation(
             shift_spectrum=shift_spectrum,
@@ -166,7 +166,7 @@ def main():
     num_classes = len(classes)
     logger.info("Classes: %s (%d)", classes, num_classes)
 
-    # Load shift spectrum for SAA
+    # Load shift spectrum for SBA
     spectrum_path = "/home/sreenath/research-space/Adverserial_net/results/fourier_analysis/cross_domain/fourier_analysis.json"
     shift_spectrum = None
     if Path(spectrum_path).exists():
@@ -194,7 +194,7 @@ def main():
 
     # Training data (IFCB only)
     train_ds_standard = PlanktonDataset(str(train_dir), class_to_idx, standard_transform)
-    train_ds_sba = PlanktonDataset(str(train_dir), class_to_idx, SAATransform(shift_spectrum))
+    train_ds_sba = PlanktonDataset(str(train_dir), class_to_idx, SBATransform(shift_spectrum))
     train_loader_standard = DataLoader(train_ds_standard, batch_size=16, shuffle=True, num_workers=4)
     train_loader_sba = DataLoader(train_ds_sba, batch_size=16, shuffle=True, num_workers=4)
 

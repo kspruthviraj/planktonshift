@@ -1,7 +1,7 @@
 """
 train_with_saa.py
 =================
-Main training script integrating Spectral Adversarial Augmentation (SAA) for
+Main training script integrating Spectral Band Adversarial augmentation (SBA) for
 cross-domain plankton classification.
 
 Trains multiple architectures with multiple augmentation strategies and evaluates
@@ -15,7 +15,7 @@ Usage:
         --architectures vit_b_16 deit_b \
         --augmentation saa_all \
         --epochs 30 \
-        --output results/saa_experiment.json
+        --output results/sba_experiment.json
 """
 
 import argparse
@@ -99,10 +99,10 @@ def load_shift_spectrum(path: str) -> np.ndarray:
     return None
 
 
-class SAATransform:
+class SBATransform:
     """Applies Spectral Adversarial Augmentation to a PIL Image, then standard transforms."""
 
-    def __init__(self, saa_strategies: list, shift_spectrum=None,
+    def __init__(self, sba_strategies: list, shift_spectrum=None,
                  target_image_paths=None, strength=0.5, p=0.5):
         # Pre-load target-domain images for FDA
         target_images = []
@@ -119,7 +119,7 @@ class SAATransform:
             shift_spectrum=shift_spectrum,
             target_images=target_images if target_images else None,
             strength=strength,
-            strategies=saa_strategies,
+            strategies=sba_strategies,
             p=p,
         )
         self.base_transform = transforms.Compose([
@@ -139,7 +139,7 @@ class SAATransform:
         return self.base_transform(image_aug)
 
 
-SAA_STRATEGIES_MAP = {
+SBA_STRATEGIES_MAP = {
     "saa_amplitude": ["amplitude_mix"],
     "saa_noise": ["spectral_noise"],
     "saa_band": ["band_adversarial"],
@@ -177,15 +177,15 @@ def get_train_transform(augmentation: str, shift_spectrum=None, target_image_pat
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
         ])
 
-    elif augmentation in SAA_STRATEGIES_MAP:
-        strategies = SAA_STRATEGIES_MAP[augmentation]
+    elif augmentation in SBA_STRATEGIES_MAP:
+        strategies = SBA_STRATEGIES_MAP[augmentation]
         has_fda = "fda_swap" in strategies
-        logger.info("SAA strategies: %s  shift_spectrum: %s  FDA target images: %s",
+        logger.info("SBA strategies: %s  shift_spectrum: %s  FDA target images: %s",
                      strategies,
                      "loaded" if shift_spectrum is not None else "None",
                      len(target_image_paths) if target_image_paths else 0)
-        return SAATransform(
-            saa_strategies=strategies,
+        return SBATransform(
+            sba_strategies=strategies,
             shift_spectrum=shift_spectrum,
             target_image_paths=target_image_paths if has_fda else None,
             strength=0.5,
@@ -233,7 +233,7 @@ def build_model(arch: str, num_classes: int, pretrained: bool = True) -> nn.Modu
 # ---------------------------------------------------------------------------
 # Training loop
 # ---------------------------------------------------------------------------
-def train_epoch(model, loader, criterion, optimizer, device, saa_augmenter=None):
+def train_epoch(model, loader, criterion, optimizer, device, sba_augmenter=None):
     model.train()
     total_loss = 0
     correct = 0
@@ -339,7 +339,7 @@ def bootstrap_ci(accuracies, n_bootstrap=1000, ci=0.95):
 # Main
 # ---------------------------------------------------------------------------
 def main():
-    parser = argparse.ArgumentParser(description="Train with SAA for cross-domain plankton classification.")
+    parser = argparse.ArgumentParser(description="Train with SBA for cross-domain plankton classification.")
     parser.add_argument("--data-dir", type=str, required=True)
     parser.add_argument("--source-domain", type=str, default="WHOI22")
     parser.add_argument("--target-domains", nargs="+", default=["ZooScan20", "ZooLake35"])
@@ -355,7 +355,7 @@ def main():
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--seeds", nargs="+", type=int, default=[42],
                         help="Random seeds for ensemble training")
-    parser.add_argument("--output", type=str, default="results/saa_experiment.json")
+    parser.add_argument("--output", type=str, default="results/sba_experiment.json")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
 
@@ -384,7 +384,7 @@ def main():
                 logger.info("Loaded shift spectrum from %s", sp)
                 break
         if shift_spectrum is None:
-            logger.warning("No shift spectrum found — SAA will use default parameters")
+            logger.warning("No shift spectrum found — SBA will use default parameters")
 
         # Load target-domain images for FDA-style augmentation
         for target_domain in args.target_domains:

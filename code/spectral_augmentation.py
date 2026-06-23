@@ -1,7 +1,7 @@
 """
 spectral_augmentation.py
 ========================
-Spectral Adversarial Augmentation (SAA) for cross-domain plankton classification.
+Spectral Band Adversarial augmentation (SBA) for cross-domain plankton classification.
 
 UPDATED: Incorporates research findings on what actually works:
 1. FDA-style low-frequency amplitude swap (Yang & Soatto 2020)
