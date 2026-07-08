@@ -15,6 +15,19 @@ When you train a plankton classifier on images from one camera (say, an IFCB) an
 
 ---
 
+## Preprocessing
+
+All experiments use **Chen et al.'s proportional-padding pipeline** (Pipeline A), identical to the original paper:
+
+1. **Shrink** image keeping aspect ratio so the longest side = 128px
+2. **Black-pad** to 128x128 square (zero-fill the shorter dimension)
+3. **Resize** to 224x224 using bilinear interpolation
+4. **Normalise** pixel values to [0, 1]
+
+This is implemented in `code/utils_pipeline.py::preprocess_image()`. We do NOT use center-crop or direct resize (which distort aspect ratio). Using the same preprocessing as Chen et al. ensures our comparisons are fair.
+
+---
+
 ## Quick Start
 
 ```bash
