@@ -2,8 +2,6 @@
 
 > **"Why Plankton Classifiers Fail Across Imaging Systems: Frequency-Domain Analysis, Spectral Augmentation, and Retrieval-Augmented Vision-Language Models for Robust Ecological Monitoring"**
 
-**Authors:** Kyathanahally Sreenath, Chao Chen, Marc Reyes, Svenja Merkli, Ewa Merz, Francesco Pomati, Marco Baity-Jesi
-
 ---
 
 ## Key Findings
@@ -18,7 +16,6 @@
 | Mid-freq masking (species acc) | **14.6%** (below chance — no species info) |
 | SBA temporal OOD (ZooLake) | **83.19%** (beats Chen's 83.05%) |
 | SBA cross-instrument (IFCB→ZooScan) | 46.0% vs 45.8% baseline (not significant) |
-| RAVL lift (IFCB-NES) | **+57.5%** |
 | OOD detection (ROC-AUC) | **0.72–0.92** |
 
 ## Quick Start
@@ -61,7 +58,7 @@ PlanktonShift/
 │   ├── run_statistics.py
 │   ├── experiment_frequency_decomposition_generality.py
 │   ├── adverserial_net/               # Spectral augmentation, SBA implementation
-│   └── datashift/                     # RAG, morphological catalog
+│   └── datashift/                     # OOD detection, ecological metrics
 ├── results/                           # Experiment outputs (JSON)
 │   ├── tier1_corrected/               # Corrected experiment results
 │   ├── perchannel_sba/                # Temporal OOD results
@@ -155,9 +152,8 @@ All experiments use **Pipeline A** (Proportional Padding: resize to 128px keepin
 ## Citation
 
 ```bibtex
-@article{kyathanahally2026plankton,
+@article{planktonshift2026,
   title={Why Plankton Classifiers Fail Across Imaging Systems: Frequency-Domain Analysis, Spectral Augmentation, and Retrieval-Augmented Vision-Language Models for Robust Ecological Monitoring},
-  author={Kyathanahally, Sreenath and Chen, Chao and Reyes, Marc and Merkli, Svenja and Merz, Ewa and Pomati, Francesco and Baity-Jesi, Marco},
   journal={Methods in Ecology and Evolution},
   year={2026}
 }
