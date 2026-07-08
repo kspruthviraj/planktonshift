@@ -1,0 +1,81 @@
+{
+  "pillow_v6": "6.2.2",
+  "pillow_v7": "7.0.0",
+  "v6_filter": "NEAREST",
+  "v7_filter": "BICUBIC",
+  "n_images": 112,
+  "mean_abs_residual": 0.006200700146129869,
+  "max_abs_residual": 0.5411764705882353,
+  "std_residual": 0.012359067493793185,
+  "fraction_nonzero": 0.49192449719843295,
+  "residual_range": [
+    -0.3294117647058824,
+    0.5411764705882353
+  ],
+  "per_class": {
+    "Amphipoda": {
+      "n": 30,
+      "mean_abs_residual": 0.0054456365879685205
+    },
+    "Annelida": {
+      "n": 30,
+      "mean_abs_residual": 0.005505311499599839
+    },
+    "Appendicularia": {
+      "n": 30,
+      "mean_abs_residual": 0.006554176358043218
+    },
+    "Calanoida": {
+      "n": 10,
+      "mean_abs_residual": 0.007619180484693877
+    },
+    "Ceratium": {
+      "n": 1,
+      "mean_abs_residual": 0.011001275510204083
+    },
+    "Chaetoceros": {
+      "n": 1,
+      "mean_abs_residual": 0.005313062725090035
+    },
+    "Coscinodiscus": {
+      "n": 1,
+      "mean_abs_residual": 0.007348017331932774
+    },
+    "Euplotes": {
+      "n": 1,
+      "mean_abs_residual": 0.005582779986994799
+    },
+    "Guinardia": {
+      "n": 1,
+      "mean_abs_residual": 0.012071547368947576
+    },
+    "Mesodinium": {
+      "n": 1,
+      "mean_abs_residual": 0.0060495291866746684
+    },
+    "Protoperidinium": {
+      "n": 1,
+      "mean_abs_residual": 0.008246892507002801
+    },
+    "Pseudo-nitzschia": {
+      "n": 1,
+      "mean_abs_residual": 0.0029328919067627044
+    },
+    "Rhizosolenia": {
+      "n": 1,
+      "mean_abs_residual": 0.010854107267907163
+    },
+    "Strombidium": {
+      "n": 1,
+      "mean_abs_residual": 0.00933732868147259
+    },
+    "Thalassiosira": {
+      "n": 1,
+      "mean_abs_residual": 0.0068614164415766316
+    },
+    "Tintinnopsis": {
+      "n": 1,
+      "mean_abs_residual": 0.007534029236694677
+    }
+  }
+}

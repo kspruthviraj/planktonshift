@@ -1,0 +1,86 @@
+{
+  "low": {
+    "species_accuracy": 0.45985401459854014,
+    "species_ci95": [
+      0.3722627737226277,
+      0.5401459854014599
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.6855263157894738,
+    "domain_delta_vs_all": -0.06729323308270674,
+    "domain_n": 283,
+    "band_edges_frac": [
+      0.0,
+      0.2
+    ]
+  },
+  "mid": {
+    "species_accuracy": 0.08759124087591241,
+    "species_ci95": [
+      0.043795620437956206,
+      0.1386861313868613
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.5194862155388471,
+    "domain_delta_vs_all": -0.2333333333333334,
+    "domain_n": 283,
+    "band_edges_frac": [
+      0.2,
+      0.4
+    ]
+  },
+  "high": {
+    "species_accuracy": 0.021897810218978103,
+    "species_ci95": [
+      0.0,
+      0.051094890510948905
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.5793859649122807,
+    "domain_delta_vs_all": -0.17343358395989983,
+    "domain_n": 283,
+    "band_edges_frac": [
+      0.4,
+      1.0
+    ]
+  },
+  "all": {
+    "species_accuracy": 0.4744525547445255,
+    "species_ci95": [
+      0.3939781021897811,
+      0.5547445255474452
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.6785087719298245,
+    "domain_delta_vs_all": -0.074310776942356,
+    "domain_n": 283,
+    "band_edges_frac": [
+      0.0,
+      1.0
+    ]
+  },
+  "_meta": {
+    "source": "/home/sreenath/research-space/PlanktonShift/data/cross_instrument/train/DataShift_IFCB",
+    "target": "/home/sreenath/research-space/PlanktonShift/data/cross_instrument/test/DataShift_ZooScan",
+    "simulate_domains": false,
+    "preprocessing": "ProportionalPadding(128)->Resize(224,BILINEAR)",
+    "domain_metric": "amplitude-feature 5-fold CV on both domains (de-confounded)",
+    "baseline_domain_accuracy_all": 0.7528195488721805,
+    "n_classes": 6,
+    "classes": [
+      "Amphipoda",
+      "Annelida",
+      "Appendicularia",
+      "Calanoida",
+      "Ceratium",
+      "Coscinodiscus"
+    ],
+    "epochs": 15,
+    "bands_tested": [
+      "low",
+      "mid",
+      "high",
+      "all"
+    ]
+  }
+}

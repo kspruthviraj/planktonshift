@@ -1,0 +1,60 @@
+{
+  "conditions": {
+    "baseline": {
+      "accuracy": NaN,
+      "ci_95": [
+        NaN,
+        NaN
+      ],
+      "n_samples": 0,
+      "elapsed_s": 2.6226043701171875e-06,
+      "per_class": {}
+    },
+    "morphological_rag": {
+      "accuracy": NaN,
+      "ci_95": [
+        NaN,
+        NaN
+      ],
+      "n_samples": 0,
+      "elapsed_s": 6.4373016357421875e-06,
+      "per_class": {}
+    },
+    "aa_rag": {
+      "accuracy": NaN,
+      "ci_95": [
+        NaN,
+        NaN
+      ],
+      "n_samples": 0,
+      "elapsed_s": 2.384185791015625e-06,
+      "per_class": {}
+    },
+    "aa_rag_ref": {
+      "accuracy": NaN,
+      "ci_95": [
+        NaN,
+        NaN
+      ],
+      "n_samples": 0,
+      "elapsed_s": 9.5367431640625e-07,
+      "per_class": {}
+    }
+  },
+  "per_sample": {
+    "baseline": [],
+    "morphological_rag": [],
+    "aa_rag": [],
+    "aa_rag_ref": []
+  },
+  "classes": [],
+  "metadata": {
+    "data_dir": "/home/sreenath/research-space/PlanktonShift/data/chen_data/OOD_data/OODs/OOD1",
+    "source_domain": "train/DataShift_IFCB",
+    "target_domain": "test/DataShift_ZooScan",
+    "endpoint": "http://localhost:8000/v1/chat/completions",
+    "model": "Qwen2.5-VL-32B-Instruct-AWQ",
+    "output": "results/rag_chen_ood1.json",
+    "max_samples": 50
+  }
+}

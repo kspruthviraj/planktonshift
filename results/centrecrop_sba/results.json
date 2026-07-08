@@ -1,0 +1,22 @@
+{
+  "macro": 0.8218731800766284,
+  "vs_chen": -0.8626819923371665,
+  "per_day": {
+    "OOD1": 0.874,
+    "OOD10": 0.941,
+    "OOD2": 0.82,
+    "OOD3": 0.8697318007662835,
+    "OOD4": 0.748,
+    "OOD5": 0.769,
+    "OOD6": 0.838,
+    "OOD7": 0.798,
+    "OOD8": 0.796,
+    "OOD9": 0.765
+  },
+  "config": {
+    "preprocessing": "CenterCrop(224)",
+    "sba": "per_channel_RGB",
+    "tta": "4 rotations",
+    "ensemble": "geometric_3_models"
+  }
+}

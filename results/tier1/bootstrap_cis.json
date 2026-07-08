@@ -1,0 +1,16 @@
+{
+  "domain_classifier": {
+    "accuracy": 0.8309412007749817,
+    "ci_95": [
+      0.8172402271967926,
+      0.8436351486802539
+    ],
+    "n_samples": 2993
+  },
+  "separability": {
+    "baseline": {},
+    "sba": {}
+  },
+  "cross_domain": {},
+  "ood_detection": {}
+}

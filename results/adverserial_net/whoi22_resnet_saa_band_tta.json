@@ -1,0 +1,110 @@
+{
+  "resnet50_seed42_saa_band": {
+    "architecture": "resnet50",
+    "seed": 42,
+    "augmentation": "saa_band",
+    "epochs": 30,
+    "source_domain": "train/WHOI22",
+    "domains": {
+      "train/WHOI22": {
+        "accuracy": 0.9943922400727493,
+        "ci_95": [
+          0.9925735071233707,
+          0.9959116398908759
+        ],
+        "ece": 0.05682778175977837,
+        "per_class": {
+          "Asterionellopsis": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Chaetoceros": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Cylindrotheca": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "DactFragCeratul": {
+            "accuracy": 0.9966666666666667,
+            "total": 300
+          },
+          "Dactyliosolen": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Dinobryon": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Ditylum": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Euglena": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Guinardia": {
+            "accuracy": 0.9933333333333333,
+            "total": 300
+          },
+          "Licmophora": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Phaeocystis": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Pleurosigma": {
+            "accuracy": 0.98,
+            "total": 300
+          },
+          "Pseudonitzschia": {
+            "accuracy": 0.9933333333333333,
+            "total": 300
+          },
+          "Rhizosolenia": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Skeletonema": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "Thalassiosira": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "ciliate": {
+            "accuracy": 1.0,
+            "total": 300
+          },
+          "detritus": {
+            "accuracy": 0.9899328859060402,
+            "total": 298
+          },
+          "dinoflagellate": {
+            "accuracy": 0.9633333333333334,
+            "total": 300
+          },
+          "nanoflagellate": {
+            "accuracy": 0.99,
+            "total": 300
+          },
+          "other_lt20": {
+            "accuracy": 0.97,
+            "total": 300
+          },
+          "pennate": {
+            "accuracy": 1.0,
+            "total": 300
+          }
+        },
+        "n_samples": 6598
+      }
+    }
+  }
+}

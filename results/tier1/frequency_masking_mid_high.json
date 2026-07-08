@@ -1,0 +1,8 @@
+{
+  "mid_high": {
+    "species_accuracy": 0.2116788321167883,
+    "domain_accuracy": 0.8931135531135531,
+    "n_train": 384,
+    "n_test": 137
+  }
+}

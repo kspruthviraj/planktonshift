@@ -1,0 +1,9 @@
+{
+  "architecture": "vit_b_16",
+  "augmentation": "none (clean crops)",
+  "tta": true,
+  "train": {
+    "accuracy": 0.9992812649736463,
+    "n": 12522
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "pillow_version": "7.0.0",
+  "data_dir": "/home/sreenath/research-space/DataShift/data/eval/IFCB",
+  "img_size": 224,
+  "images": [
+    {
+      "class": "Amphipoda",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00001.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00002.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00003.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00004.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00005.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00006.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00007.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00008.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00009.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00010.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00011.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00012.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00013.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00014.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00015.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00016.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00017.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00018.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00019.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00020.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00021.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00022.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00023.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00024.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00025.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00026.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00027.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00028.png"
+    },
+    {
+      "class": "Amphipoda",
+      "file": "img_00029.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00001.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00002.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00003.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00004.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00005.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00006.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00007.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00008.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00009.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00010.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00011.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00012.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00013.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00014.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00015.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00016.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00017.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00018.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00019.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00020.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00021.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00022.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00023.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00024.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00025.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00026.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00027.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00028.png"
+    },
+    {
+      "class": "Annelida",
+      "file": "img_00029.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00001.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00002.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00003.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00004.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00005.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00006.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00007.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00008.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00009.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00010.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00011.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00012.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00013.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00014.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00015.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00016.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00017.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00018.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00019.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00020.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00021.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00022.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00023.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00024.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00025.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00026.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00027.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00028.png"
+    },
+    {
+      "class": "Appendicularia",
+      "file": "img_00029.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00001.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00002.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00003.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00004.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00005.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00006.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00007.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00008.png"
+    },
+    {
+      "class": "Calanoida",
+      "file": "img_00009.png"
+    },
+    {
+      "class": "Ceratium",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Chaetoceros",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Coscinodiscus",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Euplotes",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Guinardia",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Mesodinium",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Protoperidinium",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Pseudo-nitzschia",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Rhizosolenia",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Strombidium",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Thalassiosira",
+      "file": "img_00000.png"
+    },
+    {
+      "class": "Tintinnopsis",
+      "file": "img_00000.png"
+    }
+  ],
+  "resize_filter": "BICUBIC (default)"
+}

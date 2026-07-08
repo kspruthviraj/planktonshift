@@ -1,0 +1,120 @@
+{
+  "pillow_6_nearest_macro": 0.8292226053639847,
+  "pillow_6_nearest_micro": 0.8266120562906952,
+  "pillow_7_bicubic_macro": 0.8303310344827587,
+  "pillow_7_bicubic_micro": 0.8278722957361899,
+  "macro_diff_percent": 0.1108429118773957,
+  "micro_diff_percent": 0.1260239445494693,
+  "mcnemar": {
+    "statistic": 0.7960526315789473,
+    "p_value": 0.7446641030905876,
+    "discordant": {
+      "bicubic_right_nearest_wrong": 82,
+      "bicubic_wrong_nearest_right": 70
+    }
+  },
+  "per_day_bicubic": {
+    "OOD1": {
+      "accuracy": 0.876,
+      "n_images": 1000,
+      "correct": 876
+    },
+    "OOD10": {
+      "accuracy": 0.968,
+      "n_images": 1000,
+      "correct": 968
+    },
+    "OOD2": {
+      "accuracy": 0.828,
+      "n_images": 1000,
+      "correct": 828
+    },
+    "OOD3": {
+      "accuracy": 0.8793103448275862,
+      "n_images": 522,
+      "correct": 459
+    },
+    "OOD4": {
+      "accuracy": 0.758,
+      "n_images": 1000,
+      "correct": 758
+    },
+    "OOD5": {
+      "accuracy": 0.78,
+      "n_images": 1000,
+      "correct": 780
+    },
+    "OOD6": {
+      "accuracy": 0.852,
+      "n_images": 1000,
+      "correct": 852
+    },
+    "OOD7": {
+      "accuracy": 0.789,
+      "n_images": 1000,
+      "correct": 789
+    },
+    "OOD8": {
+      "accuracy": 0.813,
+      "n_images": 1000,
+      "correct": 813
+    },
+    "OOD9": {
+      "accuracy": 0.76,
+      "n_images": 1000,
+      "correct": 760
+    }
+  },
+  "per_day_nearest": {
+    "OOD1": {
+      "accuracy": 0.879,
+      "n_images": 1000,
+      "correct": 879
+    },
+    "OOD10": {
+      "accuracy": 0.969,
+      "n_images": 1000,
+      "correct": 969
+    },
+    "OOD2": {
+      "accuracy": 0.828,
+      "n_images": 1000,
+      "correct": 828
+    },
+    "OOD3": {
+      "accuracy": 0.8812260536398467,
+      "n_images": 522,
+      "correct": 460
+    },
+    "OOD4": {
+      "accuracy": 0.757,
+      "n_images": 1000,
+      "correct": 757
+    },
+    "OOD5": {
+      "accuracy": 0.78,
+      "n_images": 1000,
+      "correct": 780
+    },
+    "OOD6": {
+      "accuracy": 0.846,
+      "n_images": 1000,
+      "correct": 846
+    },
+    "OOD7": {
+      "accuracy": 0.786,
+      "n_images": 1000,
+      "correct": 786
+    },
+    "OOD8": {
+      "accuracy": 0.806,
+      "n_images": 1000,
+      "correct": 806
+    },
+    "OOD9": {
+      "accuracy": 0.76,
+      "n_images": 1000,
+      "correct": 760
+    }
+  }
+}

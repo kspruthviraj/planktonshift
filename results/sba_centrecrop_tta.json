@@ -1,0 +1,22 @@
+{
+  "macro": 0.8298563218390805,
+  "vs_chen": -0.06436781609194808,
+  "per_day": {
+    "OOD1": 0.874,
+    "OOD10": 0.949,
+    "OOD2": 0.815,
+    "OOD3": 0.8735632183908046,
+    "OOD4": 0.752,
+    "OOD5": 0.775,
+    "OOD6": 0.852,
+    "OOD7": 0.794,
+    "OOD8": 0.82,
+    "OOD9": 0.794
+  },
+  "config": {
+    "models": "OLD SBA (v4)",
+    "preprocessing": "CenterCrop(224) + ToTensor (matching training preprocessing)",
+    "tta": "4 rotations (0/90/180/270)",
+    "ensemble": "geometric mean of 3 models"
+  }
+}

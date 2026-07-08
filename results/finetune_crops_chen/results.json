@@ -1,0 +1,27 @@
+{
+  "macro": 0.7427452537157296,
+  "vs_chen": -8.775474628427038,
+  "per_day": {
+    "OOD1": 0.8186274509803921,
+    "OOD10": 0.8959854014598541,
+    "OOD2": 0.7738693467336684,
+    "OOD3": 0.8195777351247601,
+    "OOD4": 0.684,
+    "OOD5": 0.7124248496993988,
+    "OOD6": 0.716297786720322,
+    "OOD7": 0.6783567134268537,
+    "OOD8": 0.6746987951807228,
+    "OOD9": 0.6536144578313253
+  },
+  "config": {
+    "sba": true,
+    "sba_strength": 0.1,
+    "sba_p": 0.3,
+    "epochs": 3,
+    "lr": 1e-06,
+    "preprocessing": "Chen_ResizeWithProportions(128)",
+    "input": "segmented_crops",
+    "tta": "4_rotation",
+    "ensemble": "geometric_3_models"
+  }
+}

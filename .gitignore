@@ -1,0 +1,70 @@
+# Misc (non-essential files moved here)
+misc/
+
+# Data (too large for git — see README for download instructions)
+data/
+
+# Embedded git repos
+code/chen_repo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Model checkpoints (too large for git)
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.pkl
+*.pkl.gz
+
+# Logs
+*.log
+*.out
+
+# Archives
+*.zip
+*.tar.gz
+*.tar.bz2
+
+# Paper (maintained separately)
+paper/
+
+# Segmentation experiments (not in paper)
+seg_comparison*/
+data_rfdetr*/
+data_segmentation*/
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb

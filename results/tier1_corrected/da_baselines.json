@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "source": "/home/sreenath/research-space/PlanktonShift/data/cross_instrument/train/DataShift_IFCB",
+    "target": "/home/sreenath/research-space/PlanktonShift/data/cross_instrument/test/DataShift_ZooScan",
+    "preprocessing": "ProportionalPadding(128)->Resize(224) [Pipeline A]",
+    "seed": 42,
+    "n_classes": 6
+  },
+  "standard": {
+    "accuracy": 0.4744525547445255,
+    "ci_95": [
+      0.38686131386861317,
+      0.5620437956204379
+    ]
+  },
+  "randaugment": {
+    "accuracy": 0.48175182481751827,
+    "ci_95": [
+      0.40145985401459855,
+      0.5622262773722617
+    ]
+  },
+  "heavy": {
+    "accuracy": 0.48905109489051096,
+    "ci_95": [
+      0.40145985401459855,
+      0.5693430656934306
+    ]
+  },
+  "fda": {
+    "accuracy": 0.5182481751824818,
+    "ci_95": [
+      0.43795620437956206,
+      0.6058394160583942
+    ]
+  },
+  "sba_band": {
+    "accuracy": 0.5036496350364964,
+    "ci_95": [
+      0.4233576642335766,
+      0.5912408759124088
+    ]
+  },
+  "coral": {
+    "accuracy": 0.5109489051094891,
+    "ci_95": [
+      0.4306569343065693,
+      0.5912408759124088
+    ]
+  }
+}

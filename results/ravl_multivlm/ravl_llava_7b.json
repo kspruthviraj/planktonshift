@@ -1,0 +1,25 @@
+{
+  "model": "llava:7b",
+  "results": {
+    "ZooLake_baseline": {
+      "accuracy": 0.011320754716981131,
+      "correct": 15,
+      "total": 1325
+    },
+    "IFCB-NES_baseline": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 251
+    },
+    "ZooLake_rag": {
+      "accuracy": 0.015849056603773583,
+      "correct": 21,
+      "total": 1325
+    },
+    "IFCB-NES_rag": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 251
+    }
+  }
+}

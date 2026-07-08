@@ -1,0 +1,27 @@
+{
+  "macro": 0.8319068965517241,
+  "vs_chen": 0.14068965517241017,
+  "per_day": {
+    "OOD1": 0.878,
+    "OOD10": 0.97,
+    "OOD2": 0.83,
+    "OOD3": 0.8620689655172413,
+    "OOD4": 0.762,
+    "OOD5": 0.784,
+    "OOD6": 0.852,
+    "OOD7": 0.798,
+    "OOD8": 0.817,
+    "OOD9": 0.766
+  },
+  "config": {
+    "sba_type": "per_channel_RGB",
+    "sba_strength": 0.5,
+    "sba_p": 0.8,
+    "lr": 1e-05,
+    "epochs": 10,
+    "tta": "4 rotations",
+    "preprocessing": "Chen_ResizeWithProportions(128)->Resize(224)",
+    "augmentation": "per-channel SBA + Chen targeted",
+    "ensemble": "geometric_3_models"
+  }
+}

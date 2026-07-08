@@ -1,0 +1,1591 @@
+{
+  "model": "vit_b_16",
+  "trained_on": "IFCB",
+  "classes": [
+    "Amphipoda",
+    "Annelida",
+    "Ceratium",
+    "Chaetognatha",
+    "Coscinodiscus",
+    "Noctiluca"
+  ],
+  "num_classes": 6,
+  "epochs": 30,
+  "ifcb": {
+    "accuracy": 1.0,
+    "ci_95": [
+      1.0,
+      1.0
+    ],
+    "ece": 0.0046050762136777305,
+    "per_class": {
+      "Amphipoda": {
+        "accuracy": 1.0,
+        "total": 30,
+        "correct": 30
+      },
+      "Annelida": {
+        "accuracy": 1.0,
+        "total": 30,
+        "correct": 30
+      },
+      "Ceratium": {
+        "accuracy": 1.0,
+        "total": 30,
+        "correct": 30
+      },
+      "Coscinodiscus": {
+        "accuracy": 1.0,
+        "total": 30,
+        "correct": 30
+      }
+    }
+  },
+  "zooscan": {
+    "accuracy": 0.24444444444444444,
+    "ci_95": [
+      0.18333333333333332,
+      0.3055555555555556
+    ],
+    "ece": 0.5555129094256295,
+    "per_class": {
+      "Amphipoda": {
+        "accuracy": 0.4666666666666667,
+        "total": 30,
+        "correct": 14
+      },
+      "Annelida": {
+        "accuracy": 1.0,
+        "total": 30,
+        "correct": 30
+      },
+      "Ceratium": {
+        "accuracy": 0.0,
+        "total": 30,
+        "correct": 0
+      },
+      "Chaetognatha": {
+        "accuracy": 0.0,
+        "total": 30,
+        "correct": 0
+      },
+      "Coscinodiscus": {
+        "accuracy": 0.0,
+        "total": 30,
+        "correct": 0
+      },
+      "Noctiluca": {
+        "accuracy": 0.0,
+        "total": 30,
+        "correct": 0
+      }
+    }
+  },
+  "accuracy_drop": 0.7555555555555555,
+  "per_sample": {
+    "ifcb": [
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00000.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00001.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00002.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00003.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00004.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00005.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00006.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00007.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00008.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00009.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00010.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00011.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00012.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00013.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00014.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00015.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00016.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00017.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00018.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00019.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00020.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00021.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00022.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00023.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00024.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00025.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00026.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00027.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00028.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Amphipoda/img_00029.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00000.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00001.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00002.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00003.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00004.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00005.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00006.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00007.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00008.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00009.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00010.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00011.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00012.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00013.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00014.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00015.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00016.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00017.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00018.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00019.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00020.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00021.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00022.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00023.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00024.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00025.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00026.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00027.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00028.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Annelida/img_00029.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00000.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00001.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00002.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00003.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00004.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00005.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00006.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00007.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00008.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00009.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00010.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00011.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00012.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00013.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00014.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00015.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00016.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00017.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00018.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00019.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00020.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00021.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00022.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00023.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00024.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00025.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00026.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00027.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00028.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Ceratium/img_00029.png",
+        "true": "Ceratium",
+        "pred": "Ceratium"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00000.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00001.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00002.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00003.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00004.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00005.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00006.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00007.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00008.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00009.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00010.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00011.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00012.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00013.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00014.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00015.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00016.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00017.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00018.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00019.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00020.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00021.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00022.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00023.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00024.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00025.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00026.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00027.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00028.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/IFCB/Coscinodiscus/img_00029.png",
+        "true": "Coscinodiscus",
+        "pred": "Coscinodiscus"
+      }
+    ],
+    "zooscan": [
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00000.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00001.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00002.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00003.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00004.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00005.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00006.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00007.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00008.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00009.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00010.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00011.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00012.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00013.png",
+        "true": "Amphipoda",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00014.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00015.png",
+        "true": "Amphipoda",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00016.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00017.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00018.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00019.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00020.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00021.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00022.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00023.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00024.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00025.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00026.png",
+        "true": "Amphipoda",
+        "pred": "Coscinodiscus"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00027.png",
+        "true": "Amphipoda",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00028.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Amphipoda/img_00029.png",
+        "true": "Amphipoda",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00000.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00001.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00002.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00003.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00004.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00005.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00006.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00007.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00008.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00009.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00010.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00011.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00012.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00013.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00014.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00015.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00016.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00017.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00018.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00019.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00020.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00021.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00022.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00023.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00024.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00025.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00026.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00027.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00028.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Annelida/img_00029.png",
+        "true": "Annelida",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00000.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00001.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00002.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00003.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00004.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00005.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00006.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00007.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00008.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00009.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00010.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00011.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00012.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00013.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00014.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00015.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00016.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00017.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00018.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00019.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00020.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00021.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00022.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00023.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00024.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00025.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00026.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00027.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00028.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Ceratium/img_00029.png",
+        "true": "Ceratium",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00000.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00001.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00002.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00003.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00004.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00005.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00006.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00007.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00008.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00009.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00010.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00011.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00012.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00013.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00014.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00015.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00016.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00017.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00018.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00019.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00020.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00021.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00022.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00023.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00024.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00025.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00026.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00027.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00028.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Chaetognatha/img_00029.png",
+        "true": "Chaetognatha",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00000.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00001.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00002.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00003.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00004.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00005.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00006.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00007.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00008.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00009.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00010.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00011.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00012.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00013.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00014.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00015.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00016.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00017.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00018.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00019.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00020.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00021.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00022.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00023.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00024.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00025.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00026.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00027.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00028.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Coscinodiscus/img_00029.png",
+        "true": "Coscinodiscus",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00000.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00001.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00002.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00003.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00004.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00005.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00006.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00007.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00008.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00009.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00010.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00011.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00012.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00013.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00014.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00015.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00016.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00017.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00018.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00019.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00020.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00021.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00022.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00023.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00024.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00025.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00026.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00027.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00028.png",
+        "true": "Noctiluca",
+        "pred": "Annelida"
+      },
+      {
+        "path": "data/eval/ZooScan/Noctiluca/img_00029.png",
+        "true": "Noctiluca",
+        "pred": "Amphipoda"
+      }
+    ]
+  }
+}

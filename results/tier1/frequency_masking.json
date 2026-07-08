@@ -1,0 +1,26 @@
+{
+  "low": {
+    "species_accuracy": 0.43795620437956206,
+    "domain_accuracy": 0.7856227106227107,
+    "n_train": 384,
+    "n_test": 137
+  },
+  "mid": {
+    "species_accuracy": 0.2846715328467153,
+    "domain_accuracy": 0.9255677655677657,
+    "n_train": 384,
+    "n_test": 137
+  },
+  "high": {
+    "species_accuracy": 0.24817518248175183,
+    "domain_accuracy": 0.9082234432234433,
+    "n_train": 384,
+    "n_test": 137
+  },
+  "all": {
+    "species_accuracy": 0.45985401459854014,
+    "domain_accuracy": 0.8069047619047618,
+    "n_train": 384,
+    "n_test": 137
+  }
+}

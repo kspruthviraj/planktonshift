@@ -1,0 +1,6474 @@
+{
+  "baseline": [
+    {
+      "domain": "IFCB",
+      "mode": "baseline",
+      "total": 160,
+      "correct": 45,
+      "accuracy": 0.28125
+    },
+    {
+      "domain": "ZooScan",
+      "mode": "baseline",
+      "total": 240,
+      "correct": 106,
+      "accuracy": 0.44166666666666665
+    }
+  ],
+  "rag": [
+    {
+      "domain": "IFCB",
+      "mode": "rag",
+      "total": 160,
+      "correct": 57,
+      "accuracy": 0.35625
+    },
+    {
+      "domain": "ZooScan",
+      "mode": "rag",
+      "total": 240,
+      "correct": 137,
+      "accuracy": 0.5708333333333333
+    }
+  ],
+  "accuracy_gap": {
+    "IFCB": {
+      "baseline_accuracy": 0.28125,
+      "rag_accuracy": 0.35625,
+      "gap_lift": 0.07500000000000001
+    },
+    "ZooScan": {
+      "baseline_accuracy": 0.44166666666666665,
+      "rag_accuracy": 0.5708333333333333,
+      "gap_lift": 0.12916666666666665
+    }
+  },
+  "metadata": {
+    "data_root": "data/eval_v2",
+    "domains": [
+      "IFCB",
+      "ZooScan"
+    ],
+    "num_samples_requested": 0,
+    "num_samples_loaded": {
+      "IFCB": 160,
+      "ZooScan": 240
+    },
+    "morphological_catalog_size": 6,
+    "overlapping_classes": [
+      "Amphipoda",
+      "Annelida",
+      "Calanoida",
+      "Ceratium",
+      "Chaetognatha",
+      "Oithonidae"
+    ],
+    "endpoint": "http://localhost:8000/v1/chat/completions",
+    "model": "/models/models--Qwen--Qwen2.5-VL-32B-Instruct-AWQ/snapshots/66c370b74a18e7b1e871c97918f032ed3578dfef",
+    "mock": false,
+    "baseline_time_s": 377.21,
+    "rag_time_s": 779.84
+  },
+  "per_sample": [
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "baseline"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Annelida",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Oithonidae",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Amphipoda/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Annelida/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Calanoida/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00000.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00001.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00002.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00003.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00004.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00005.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00006.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00007.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00008.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00009.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00010.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00011.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00012.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00013.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00014.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00015.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00016.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00017.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00018.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00019.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00020.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00021.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00022.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00023.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00024.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00025.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00026.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00027.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00028.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00029.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00030.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00031.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00032.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00033.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00034.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00035.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00036.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00037.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00038.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/IFCB/Ceratium/img_00039.png",
+      "domain": "IFCB",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Calanoida",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Amphipoda/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Amphipoda",
+      "predicted_label": "Amphipoda",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Annelida/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Annelida",
+      "predicted_label": "Annelida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Calanoida",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Calanoida/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Calanoida",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Ceratium/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Ceratium",
+      "predicted_label": "Ceratium",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Annelida",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Annelida",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Annelida",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Chaetognatha/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Chaetognatha",
+      "predicted_label": "Chaetognatha",
+      "correct": true,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00000.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00001.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00002.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00003.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00004.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00005.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00006.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00007.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00008.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00009.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00010.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00011.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00012.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00013.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00014.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00015.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00016.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00017.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00018.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00019.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00020.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00021.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00022.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00023.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00024.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00025.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00026.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00027.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00028.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00029.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00030.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00031.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00032.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Ceratium",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00033.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00034.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00035.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00036.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00037.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Amphipoda",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00038.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    },
+    {
+      "image": "data/eval_v2/ZooScan/Oithonidae/img_00039.png",
+      "domain": "ZooScan",
+      "true_label": "Oithonidae",
+      "predicted_label": "Chaetognatha",
+      "correct": false,
+      "mode": "rag"
+    }
+  ]
+}

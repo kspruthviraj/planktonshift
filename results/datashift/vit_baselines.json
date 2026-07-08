@@ -1,0 +1,230 @@
+{
+  "vit_b_16": {
+    "arch": "vit_b_16",
+    "ifcb": {
+      "accuracy": 1.0,
+      "per_class": {
+        "Amphipoda": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Annelida": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Calanoida": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Ceratium": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Chaetognatha": {
+          "correct": 0,
+          "total": 0,
+          "accuracy": 0
+        },
+        "Oithonidae": {
+          "correct": 0,
+          "total": 0,
+          "accuracy": 0
+        }
+      },
+      "n": 160
+    },
+    "zooscan": {
+      "accuracy": 0.30833333333333335,
+      "per_class": {
+        "Amphipoda": {
+          "correct": 34,
+          "total": 40,
+          "accuracy": 0.85
+        },
+        "Annelida": {
+          "correct": 38,
+          "total": 40,
+          "accuracy": 0.95
+        },
+        "Calanoida": {
+          "correct": 2,
+          "total": 40,
+          "accuracy": 0.05
+        },
+        "Ceratium": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        },
+        "Chaetognatha": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        },
+        "Oithonidae": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        }
+      },
+      "n": 240
+    },
+    "drop": 0.6916666666666667
+  },
+  "resnet50": {
+    "arch": "resnet50",
+    "ifcb": {
+      "accuracy": 0.99375,
+      "per_class": {
+        "Amphipoda": {
+          "correct": 39,
+          "total": 40,
+          "accuracy": 0.975
+        },
+        "Annelida": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Calanoida": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Ceratium": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Chaetognatha": {
+          "correct": 0,
+          "total": 0,
+          "accuracy": 0
+        },
+        "Oithonidae": {
+          "correct": 0,
+          "total": 0,
+          "accuracy": 0
+        }
+      },
+      "n": 160
+    },
+    "zooscan": {
+      "accuracy": 0.26666666666666666,
+      "per_class": {
+        "Amphipoda": {
+          "correct": 25,
+          "total": 40,
+          "accuracy": 0.625
+        },
+        "Annelida": {
+          "correct": 36,
+          "total": 40,
+          "accuracy": 0.9
+        },
+        "Calanoida": {
+          "correct": 3,
+          "total": 40,
+          "accuracy": 0.075
+        },
+        "Ceratium": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        },
+        "Chaetognatha": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        },
+        "Oithonidae": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        }
+      },
+      "n": 240
+    },
+    "drop": 0.7270833333333333
+  },
+  "convnext_tiny": {
+    "arch": "convnext_tiny",
+    "ifcb": {
+      "accuracy": 1.0,
+      "per_class": {
+        "Amphipoda": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Annelida": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Calanoida": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Ceratium": {
+          "correct": 40,
+          "total": 40,
+          "accuracy": 1.0
+        },
+        "Chaetognatha": {
+          "correct": 0,
+          "total": 0,
+          "accuracy": 0
+        },
+        "Oithonidae": {
+          "correct": 0,
+          "total": 0,
+          "accuracy": 0
+        }
+      },
+      "n": 160
+    },
+    "zooscan": {
+      "accuracy": 0.30416666666666664,
+      "per_class": {
+        "Amphipoda": {
+          "correct": 32,
+          "total": 40,
+          "accuracy": 0.8
+        },
+        "Annelida": {
+          "correct": 38,
+          "total": 40,
+          "accuracy": 0.95
+        },
+        "Calanoida": {
+          "correct": 3,
+          "total": 40,
+          "accuracy": 0.075
+        },
+        "Ceratium": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        },
+        "Chaetognatha": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        },
+        "Oithonidae": {
+          "correct": 0,
+          "total": 40,
+          "accuracy": 0.0
+        }
+      },
+      "n": 240
+    },
+    "drop": 0.6958333333333333
+  }
+}

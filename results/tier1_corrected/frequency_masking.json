@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "source": "/home/sreenath/research-space/PlanktonShift/data/cross_instrument/train/DataShift_IFCB",
+    "target": "/home/sreenath/research-space/PlanktonShift/data/cross_instrument/test/DataShift_ZooScan",
+    "preprocessing": "ProportionalPadding(128)->Resize(224) [Pipeline A]",
+    "domain_metric": "amplitude 5-fold CV on BOTH domains (de-confounded)",
+    "baseline_domain_all": 0.6785087719298245,
+    "n_classes": 6,
+    "bands": [
+      "low",
+      "mid",
+      "high",
+      "all"
+    ]
+  },
+  "low": {
+    "species_accuracy": 0.48905109489051096,
+    "species_ci95": [
+      0.40145985401459855,
+      0.5693430656934306
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.6855263157894738,
+    "domain_delta_vs_all": 0.007017543859649256,
+    "domain_n": 283
+  },
+  "mid": {
+    "species_accuracy": 0.145985401459854,
+    "species_ci95": [
+      0.08759124087591241,
+      0.20437956204379562
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.5194862155388471,
+    "domain_delta_vs_all": -0.1590225563909774,
+    "domain_n": 283
+  },
+  "high": {
+    "species_accuracy": 0.058394160583941604,
+    "species_ci95": [
+      0.021897810218978103,
+      0.10218978102189781
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.5793859649122807,
+    "domain_delta_vs_all": -0.09912280701754383,
+    "domain_n": 283
+  },
+  "all": {
+    "species_accuracy": 0.45985401459854014,
+    "species_ci95": [
+      0.3722627737226277,
+      0.5401459854014599
+    ],
+    "n_test": 137,
+    "domain_accuracy_amplitude": 0.6785087719298245,
+    "domain_delta_vs_all": 0.0,
+    "domain_n": 283
+  }
+}

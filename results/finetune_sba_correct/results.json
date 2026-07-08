@@ -1,0 +1,27 @@
+{
+  "overall_micro": 0.8121193026675069,
+  "overall_macro": 0.8146900383141762,
+  "vs_chen": -0.015809961685823826,
+  "per_day": {
+    "OOD1": 0.87,
+    "OOD10": 0.973,
+    "OOD2": 0.819,
+    "OOD3": 0.8659003831417624,
+    "OOD4": 0.754,
+    "OOD5": 0.771,
+    "OOD6": 0.835,
+    "OOD7": 0.763,
+    "OOD8": 0.756,
+    "OOD9": 0.74
+  },
+  "config": {
+    "sba_strength": 0.5,
+    "sba_p": 0.8,
+    "lr": 1e-05,
+    "epochs": 10,
+    "tta": true,
+    "preprocessing": "Chen_ResizeWithProportions(128)->Resize(224)",
+    "augmentation": "SBA + Chen_targeted",
+    "ensemble": "geometric_mean_3_models"
+  }
+}

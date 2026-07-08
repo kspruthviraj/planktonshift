@@ -1,0 +1,242 @@
+{
+  "vit_b_16_seed42_standard": {
+    "architecture": "vit_b_16",
+    "seed": 42,
+    "augmentation": "standard",
+    "epochs": 30,
+    "source_domain": "train/DataShift_IFCB",
+    "domains": {
+      "train/DataShift_IFCB": {
+        "accuracy": 1.0,
+        "ci_95": [
+          1.0,
+          1.0
+        ],
+        "ece": 0.007851934991776992,
+        "per_class": {
+          "Amphipoda": {
+            "accuracy": 1.0,
+            "total": 28
+          },
+          "Annelida": {
+            "accuracy": 1.0,
+            "total": 26
+          },
+          "Appendicularia": {
+            "accuracy": 1.0,
+            "total": 25
+          },
+          "Calanoida": {
+            "accuracy": 1.0,
+            "total": 7
+          },
+          "Ceratium": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Chaetoceros": {
+            "accuracy": 1.0,
+            "total": 24
+          },
+          "Coscinodiscus": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Euplotes": {
+            "accuracy": 1.0,
+            "total": 5
+          },
+          "Guinardia": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Mesodinium": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Protoperidinium": {
+            "accuracy": 1.0,
+            "total": 15
+          },
+          "Pseudo-nitzschia": {
+            "accuracy": 1.0,
+            "total": 16
+          },
+          "Rhizosolenia": {
+            "accuracy": 1.0,
+            "total": 28
+          },
+          "Strombidium": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Thalassiosira": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Tintinnopsis": {
+            "accuracy": 1.0,
+            "total": 30
+          }
+        },
+        "n_samples": 384
+      },
+      "test/DataShift_ZooScan": {
+        "accuracy": 0.46715328467153283,
+        "ci_95": [
+          0.38686131386861317,
+          0.5474452554744526
+        ],
+        "ece": 0.3768965852086561,
+        "per_class": {
+          "Amphipoda": {
+            "accuracy": 0.8333333333333334,
+            "total": 30
+          },
+          "Annelida": {
+            "accuracy": 0.9333333333333333,
+            "total": 30
+          },
+          "Appendicularia": {
+            "accuracy": 0.3793103448275862,
+            "total": 29
+          },
+          "Calanoida": {
+            "accuracy": 0.0,
+            "total": 30
+          },
+          "Ceratium": {
+            "accuracy": 0.0,
+            "total": 15
+          },
+          "Coscinodiscus": {
+            "accuracy": 0.0,
+            "total": 3
+          }
+        },
+        "n_samples": 137,
+        "accuracy_drop": 0.5328467153284672
+      }
+    }
+  },
+  "resnet50_seed42_standard": {
+    "architecture": "resnet50",
+    "seed": 42,
+    "augmentation": "standard",
+    "epochs": 30,
+    "source_domain": "train/DataShift_IFCB",
+    "domains": {
+      "train/DataShift_IFCB": {
+        "accuracy": 1.0,
+        "ci_95": [
+          1.0,
+          1.0
+        ],
+        "ece": 0.00596471658597393,
+        "per_class": {
+          "Amphipoda": {
+            "accuracy": 1.0,
+            "total": 28
+          },
+          "Annelida": {
+            "accuracy": 1.0,
+            "total": 26
+          },
+          "Appendicularia": {
+            "accuracy": 1.0,
+            "total": 25
+          },
+          "Calanoida": {
+            "accuracy": 1.0,
+            "total": 7
+          },
+          "Ceratium": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Chaetoceros": {
+            "accuracy": 1.0,
+            "total": 24
+          },
+          "Coscinodiscus": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Euplotes": {
+            "accuracy": 1.0,
+            "total": 5
+          },
+          "Guinardia": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Mesodinium": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Protoperidinium": {
+            "accuracy": 1.0,
+            "total": 15
+          },
+          "Pseudo-nitzschia": {
+            "accuracy": 1.0,
+            "total": 16
+          },
+          "Rhizosolenia": {
+            "accuracy": 1.0,
+            "total": 28
+          },
+          "Strombidium": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Thalassiosira": {
+            "accuracy": 1.0,
+            "total": 30
+          },
+          "Tintinnopsis": {
+            "accuracy": 1.0,
+            "total": 30
+          }
+        },
+        "n_samples": 384
+      },
+      "test/DataShift_ZooScan": {
+        "accuracy": 0.4744525547445255,
+        "ci_95": [
+          0.39416058394160586,
+          0.5547445255474452
+        ],
+        "ece": 0.36432393101880145,
+        "per_class": {
+          "Amphipoda": {
+            "accuracy": 0.6333333333333333,
+            "total": 30
+          },
+          "Annelida": {
+            "accuracy": 0.9333333333333333,
+            "total": 30
+          },
+          "Appendicularia": {
+            "accuracy": 0.6206896551724138,
+            "total": 29
+          },
+          "Calanoida": {
+            "accuracy": 0.0,
+            "total": 30
+          },
+          "Ceratium": {
+            "accuracy": 0.0,
+            "total": 15
+          },
+          "Coscinodiscus": {
+            "accuracy": 0.0,
+            "total": 3
+          }
+        },
+        "n_samples": 137,
+        "accuracy_drop": 0.5255474452554745
+      }
+    }
+  }
+}
