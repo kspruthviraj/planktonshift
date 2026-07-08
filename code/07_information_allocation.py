@@ -1,18 +1,61 @@
 """
-run_information_allocation_figure.py — The key takeaway figure (P1-3).
+07_information_allocation.py — Where in the frequency spectrum does each type of information live?
 
-Creates the "information allocation" figure that visually encodes the core claim:
-  - x-axis: radial frequency bins
-  - left axis (bars): domain classifier accuracy per bin (instrument signature)
-  - right axis (line): class separability per bin (biological morphology)
+STEP 7: INFORMATION ALLOCATION FIGURE
+======================================
 
-If the claim is correct, domain accuracy should peak at mid-frequencies while
-class separability peaks at low frequencies — the visual IS the claim.
+This script generates the key figure that shows, for each of 10 frequency
+bands, how much species information and how much domain/camera information
+the band carries. This is the figure that visually demonstrates the
+frequency-domain separation of biology from camera artifacts.
 
-Also creates a per-band comparison showing the separation is consistent across
-all three imaging domains (WHOI22, ZooScan20, ZooLake2).
+MATHEMATICAL PIPELINE:
+======================
 
-Output: figures/fig_information_allocation.png
+Input: Plankton images from source (IFCB) and target (ZooScan) domains.
+
+Step 1 — For each image, compute the radial amplitude profile:
+    A_bar(r) = radial_average( log(1 + |fftshift(FFT2{ I_gray })|) )
+
+    This gives a 1D vector of length ~112 (one value per radial bin).
+
+Step 2 — Divide into 10 equal bands of 11 bins each:
+    Band k: bins [k*11, (k+1)*11)  for k = 0, 1, ..., 9
+
+    Band 0 (bins 0-11)   = lowest frequencies  (overall shape)
+    Band 9 (bins 100-111) = highest frequencies (pixel noise)
+
+Step 3 — For each band k, compute species separability:
+    Extract features X_band_k = A_bar[:, k*11 : (k+1)*11]
+    Train LDA classifier to predict species from X_band_k
+    Species separability(k) = 5-fold CV accuracy
+
+    This measures: "how well can we identify the species using ONLY
+    the frequency components in band k?"
+
+Step 4 — For each band k, compute domain accuracy:
+    Concatenate features from both domains:
+        X = [X_source_band_k; X_target_band_k]
+        y = [0, 0, ..., 0, 1, 1, ..., 1]   (domain labels)
+    Train logistic regression, 5-fold CV accuracy.
+    Domain accuracy(k) = CV accuracy
+
+    This measures: "how well can we tell which camera took the image
+    using ONLY the frequency components in band k?"
+
+Step 5 — Plot both curves on the same figure:
+    x-axis: frequency band (0 = low, 9 = high)
+    y-axis: accuracy
+    Species curve: should peak at low frequencies (biology)
+    Domain curve: should be flat or peak at mid frequencies (camera artifacts)
+
+WHY IT MATTERS:
+  This figure is the single most important visual in the paper. It shows
+  that species information peaks at low frequencies while domain information
+  is distributed across the spectrum — the central claim of the paper.
+
+Output: results/tier1_corrected/information_allocation.json
+         figures/fig_information_allocation.png
 """
 import sys, json
 from pathlib import Path

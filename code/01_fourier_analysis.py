@@ -14,14 +14,60 @@ Think of it like separating a song into bass, midrange, and treble. We do
 the same for images: low frequencies = overall shape and brightness, mid
 frequencies = fine texture, high frequencies = pixel-level noise.
 
-WHAT THIS SCRIPT DOES:
-  1. Loads plankton images from three cameras (WHOI22, ZooScan20, ZooLake2)
-  2. Converts each image to frequency space (2D FFT)
-  3. Measures how much each frequency layer differs between cameras
-     (the "shift spectrum")
-  4. Trains a simple classifier to tell which camera took an image,
-     using only frequency features
-  5. Measures how much species information each frequency band carries
+MATHEMATICAL PIPELINE:
+======================
+
+Input: RGB image I(x, y) of shape (224, 224, 3), pixel values in [0, 1].
+
+Step 1 — Convert to grayscale:
+    I_gray(x, y) = mean(I_R, I_G, I_B)
+
+Step 2 — 2D Discrete Fourier Transform:
+    F(u, v) = SUM_x SUM_y I_gray(x, y) * exp(-2*pi*i * (ux/W + vy/H))
+
+    This converts the image from SPATIAL domain (pixel positions) to
+    FREQUENCY domain (how fast pixels change in each direction).
+    F(u, v) is a complex number at each frequency coordinate (u, v).
+
+Step 3 — Amplitude spectrum (log-scaled):
+    A(u, v) = log(1 + |F(u, v)|)
+
+    |F(u, v)| = sqrt(Re(F)^2 + Im(F)^2) gives the "strength" of each
+    frequency component. We take log(1 + .) to compress the dynamic range
+    (amplitude spans several orders of magnitude).
+
+Step 4 — Shift to center zero-frequency:
+    A_shifted = fftshift(A)
+
+    The FFT puts zero frequency at corner (0,0). We shift it to the center
+    so that low frequencies are in the middle and high frequencies at edges.
+
+Step 5 — Radial average (collapse 2D to 1D profile):
+    A_bar(r) = mean{ A_shifted(u, v) : sqrt((u-cx)^2 + (v-cy)^2) = r }
+
+    where (cx, cy) is the center of the spectrum. This averages all
+    frequency components at the same distance r from the center, giving
+    a 1D profile of "how much energy at each spatial frequency scale."
+
+Step 6 — Shift spectrum (difference between cameras):
+    Delta_A(r) = A_bar_source(r) - A_bar_target(r)
+
+    This shows which frequency scales differ most between cameras.
+
+Step 7 — Shift energy (single number summary):
+    E = SUM_r [Delta_A(r)]^2
+
+    Total squared difference across all frequency scales.
+
+ANALYSIS:
+=========
+  (a) Domain classifier: logistic regression on A_bar(r) features to
+      predict which camera took the image. If accuracy >> chance, the
+      amplitude spectrum encodes camera identity.
+  (b) Class separability: LDA on A_bar(r) features within each of 5
+      frequency bands to measure how much species info each band carries.
+  (c) Shift spectrum: Delta_A(r) between each pair of cameras, identifying
+      which frequency scales carry the most camera-specific information.
 
 WHY IT MATTERS:
   If cameras differ mostly in mid frequencies but species info is in low

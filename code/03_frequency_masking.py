@@ -1,5 +1,5 @@
 """
-03_frequency_masking.py -- Can a classifier identify plankton using only "bass" frequencies?
+03_frequency_masking.py — Can a classifier identify plankton using only "bass" frequencies?
 
 STEP 3: CAUSAL FREQUENCY MASKING EXPERIMENT
 ============================================
@@ -8,16 +8,56 @@ Step 01 showed that cameras differ in certain frequency bands. But is that
 just correlation, or is it causal? This script tests causation by training
 classifiers on images where we KEEP ONLY certain frequency layers:
 
-  - Low frequencies only (bins 0-22): the "bass" -- overall shape, outline
-  - Mid frequencies only (bins 22-44): the "midrange" -- fine texture
-  - High frequencies only (bins 44+): the "treble" -- pixel-level detail
+  - Low frequencies only (bins 0-22): the "bass" — overall shape, outline
+  - Mid frequencies only (bins 22-44): the "midrange" — fine texture
+  - High frequencies only (bins 44+): the "treble" — pixel-level detail
 
-If low frequencies preserve species accuracy while mid frequencies do not,
-we have causal proof that biological shape lives in the low-frequency layer.
+MATHEMATICAL PIPELINE:
+======================
 
-We also measure whether each band lets a classifier tell which camera took
-the image (domain accuracy). If mid frequencies carry camera identity but
-not species identity, that's the separation we need for targeted augmentation.
+Input: RGB image I(x, y) of shape (224, 224, 3), pixel values in [0, 1].
+
+Step 1 — Preprocess (Pipeline A: proportional padding + resize).
+
+Step 2 — Convert to grayscale and compute FFT:
+    I_gray(x, y) = mean(I_R, I_G, I_B)
+    F(u, v) = FFT2{ I_gray }
+    F_shifted = fftshift(F)       # center zero-frequency
+
+Step 3 — Build annular bandpass mask:
+    For each frequency coordinate (u, v), compute distance from center:
+        r = sqrt((u - cx)^2 + (v - cy)^2)
+    where (cx, cy) is the center of the spectrum.
+
+    Band edges as fractions of r_max = min(cx, cy):
+        Low:   0.00 * r_max  <=  r  <=  0.20 * r_max   (bins 0-22)
+        Mid:   0.20 * r_max  <=  r  <=  0.40 * r_max   (bins 22-44)
+        High:  0.40 * r_max  <=  r  <=  1.00 * r_max   (bins 44+)
+
+    Binary mask:
+        M_band(u, v) = 1  if  r_inner <= r <= r_outer
+                       0  otherwise
+
+Step 4 — Apply mask and reconstruct:
+    F_filtered(u, v) = F_shifted(u, v) * M_band(u, v)
+    I_filtered = real( IFFT2{ ifftshift(F_filtered) } )
+    I_filtered = clip(I_filtered, 0, 1)
+
+    The reconstructed image contains ONLY the frequency components in the
+    specified band. Low-band image looks blurry (only shape). Mid-band
+    image looks like edges/textures. High-band image looks like noise.
+
+Step 5 — Train ViT-B/16 on band-filtered source images, test on
+    band-filtered target images. Report species accuracy.
+
+Step 6 — Domain accuracy (de-confounded):
+    For each band, extract radial amplitude features from BOTH domains,
+    train logistic regression to predict domain (source vs target).
+    Report delta vs the all-frequencies baseline.
+
+WHY IT MATTERS:
+  If low frequencies preserve species accuracy while mid frequencies do not,
+  we have causal proof that biological shape lives in the low-frequency layer.
 
 Output: results/tier1_corrected/frequency_masking.json
 """

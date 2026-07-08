@@ -1,5 +1,5 @@
 """
-04_sba_cross_instrument.py -- Does frequency-calibrated augmentation help classifiers?
+04_sba_cross_instrument.py — Does frequency-calibrated augmentation help classifiers?
 
 STEP 4: SPECTRAL BAND ADVERSARIAL (SBA) AUGMENTATION
 =====================================================
@@ -10,14 +10,60 @@ during training, we add noise ONLY to the camera-specific frequency bands,
 teaching the model to ignore camera differences while preserving species
 recognition.
 
-This script trains ViT classifiers on the IFCB->ZooScan cross-instrument
-benchmark (6 shared classes, 384 training images) with three strategies:
-  1. Standard augmentation (baseline)
-  2. SBA band augmentation (noise calibrated to shift spectrum from Step 01)
-  3. Phase-preserving augmentation (perturb amplitude, keep phase)
+MATHEMATICAL PIPELINE:
+======================
 
-Each strategy is run with 5 different random seeds to get honest confidence
-intervals, not cherry-picked best-seed results.
+Input: grayscale image g(x, y) (after Pipeline A preprocessing).
+
+Step 1 — Compute FFT:
+    F(u, v) = FFT2{ g }
+    A(u, v) = |F(u, v)|           (amplitude)
+    phi(u, v) = angle(F(u, v))    (phase)
+
+Step 2 — Load shift spectrum from Step 01:
+    Delta_A(r) = A_bar_source(r) - A_bar_target(r)
+
+    This tells us WHICH frequency bins differ most between cameras.
+
+Step 3 — SBA spectral noise augmentation:
+    For each frequency bin (u, v) at radial distance r:
+        noise(u, v) = alpha * Delta_A(r) * N(0, 1)
+        A_aug(u, v) = A(u, v) + noise(u, v)
+
+    where alpha = strength parameter (default 0.5), and N(0,1) is
+    standard Gaussian noise. The noise is PROPORTIONAL to the observed
+    shift — bins where cameras differ more get more noise.
+
+Step 4 — SBA band adversarial augmentation:
+    Target only mid-frequency bins (where camera artifacts concentrate):
+        M_mid(u, v) = 1  if  0.20*r_max <= r <= 0.40*r_max
+                      0  otherwise
+        A_aug(u, v) = A(u, v) + alpha * M_mid(u, v) * |N(0,1)|
+
+    Only mid-frequency amplitudes are perturbed; low (species) and high
+    (noise) frequencies are left untouched.
+
+Step 5 — Reconstruct augmented image:
+    F_aug(u, v) = A_aug(u, v) * exp(i * phi(u, v))
+    g_aug = real( IFFT2{ F_aug } )
+
+    Phase is PRESERVED — the biological shape (in phase) is unchanged.
+    Only amplitude (camera artifacts) is perturbed.
+
+Step 6 — Phase-preserving SBA (control):
+    Same as Step 3 but without shift calibration:
+        A_aug(u, v) = A(u, v) + alpha * 0.1 * N(0, 1)
+    Applied to ALL frequency bins uniformly.
+
+Step 7 — Train ViT-B/16 on augmented source, evaluate on unmodified target.
+    Repeat with 5 random seeds for honest confidence intervals.
+    Compare using McNemar's paired test.
+
+WHY IT MATTERS:
+  SBA exploits the frequency-domain separation found in Steps 01-03:
+  perturb the bands that carry camera artifacts (amplitude), preserve
+  the bands that carry species info (phase). If this works, it validates
+  the entire frequency-domain framework.
 
 Output: results/tier1_corrected/sba_cross_instrument.json
 """

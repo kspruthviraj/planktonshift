@@ -1,5 +1,5 @@
 """
-02_amplitude_vs_phase.py -- Does the shape of a plankton live in the "bass" or the "treble"?
+02_amplitude_vs_phase.py — Does the shape of a plankton live in the "bass" or the "treble"?
 
 STEP 2: CONTROLLED AMPLITUDE-VS-PHASE EXPERIMENT
 =================================================
@@ -8,12 +8,55 @@ Every image can be decomposed into two components in frequency space:
   - AMPLITUDE: how strong each frequency is (like the volume of each note)
   - PHASE: where each frequency appears in the image (like the timing of each note)
 
-This script tests which component carries the species-discriminative information:
-  (a) Phase-scrambled: keep amplitude, randomise phase -> if species info is in
-      phase, accuracy should drop
-  (b) Amplitude-swapped: swap amplitude with a target-domain image, keep phase
-      -> if amplitude carries camera artifacts, accuracy should improve
-  (c) Both-scrambled: randomise both -> negative control
+This script tests which component carries the species-discriminative information.
+
+MATHEMATICAL PIPELINE:
+======================
+
+Input: RGB image I(x, y) of shape (224, 224, 3), pixel values in [0, 1].
+
+Step 1 — Convert to grayscale:
+    I_gray(x, y) = mean(I_R, I_G, I_B)
+
+Step 2 — 2D FFT (convert to frequency domain):
+    F(u, v) = FFT2{ I_gray }
+
+Step 3 — Decompose into amplitude and phase:
+    Amplitude:  A(u, v) = |F(u, v)|      (strength of each frequency)
+    Phase:      phi(u, v) = angle(F(u, v))  (position of each frequency)
+
+    Together: F(u, v) = A(u, v) * exp(i * phi(u, v))
+
+Step 4 — Three experimental manipulations:
+
+  (a) PHASE SCRAMBLE (keep amplitude, randomise phase):
+      phi_random(u, v) ~ Uniform(-pi, pi)
+      F_new(u, v) = A(u, v) * exp(i * phi_random(u, v))
+      I_new = real( IFFT2{ F_new } )
+
+      If species info is in phase (body outline, spine positions),
+      this should DESTROY classification accuracy.
+
+  (b) AMPLITUDE SWAP (swap amplitude with target-domain image, keep phase):
+      Given source image S and target-domain donor T:
+      F_new(u, v) = |F_T(u, v)| * exp(i * angle(F_S(u, v)))
+      I_new = real( IFFT2{ F_new } )
+
+      If amplitude carries camera artifacts (illumination, contrast),
+      this should SIMULATE cross-domain transfer and IMPROVE accuracy.
+
+  (c) BOTH SCRAMBLE (randomise both — negative control):
+      F_new(u, v) = A_random(u, v) * exp(i * phi_random(u, v))
+      I_new = real( IFFT2{ F_new } )
+
+      Should produce near-random accuracy (sanity check).
+
+Step 5 — Train ViT-B/16 on each condition, evaluate on unmodified target.
+
+INTERPRETATION:
+  - If phase_scrambled drops accuracy -> PHASE carries morphology
+  - If amp_swapped improves accuracy -> AMPLITUDE carries domain artifacts
+  - If both_scrambled is near zero   -> experiment is working correctly
 
 WHY IT MATTERS:
   If phase carries the biological shape (body outline, spines, horns), then

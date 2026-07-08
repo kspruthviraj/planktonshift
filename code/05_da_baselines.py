@@ -1,5 +1,5 @@
 """
-05_da_baselines.py -- How does SBA compare to generic domain adaptation methods?
+05_da_baselines.py — How does SBA compare to generic domain adaptation methods?
 
 STEP 5: DOMAIN ADAPTATION BASELINES COMPARISON
 ===============================================
@@ -11,11 +11,60 @@ analysis at all. This script compares SBA against:
   - Standard augmentation (random flips, rotations)
   - RandAugment (strong generic augmentation)
   - Heavy augmentation (color jitter, blur, rotations)
-  - FDA (Fourier Domain Adaptation -- swaps low-frequency amplitude)
-  - CORAL (Correlation Alignment -- matches feature statistics)
+  - FDA (Fourier Domain Adaptation — swaps low-frequency amplitude)
+  - CORAL (Correlation Alignment — matches feature statistics)
 
-All methods are evaluated on the same IFCB->ZooScan benchmark with the same
-preprocessing pipeline and random seed, so the comparison is fair.
+MATHEMATICAL DESCRIPTION OF EACH METHOD:
+=========================================
+
+1. STANDARD AUGMENTATION:
+   Random horizontal flip (p=0.5), vertical flip (p=0.5), rotation (0-360).
+   No frequency-domain processing.
+
+2. RANDAUGMENT:
+   Applies N=2 random augmentation operations from a predefined set
+   (shear, translate, rotate, brightness, contrast, etc.) with
+   magnitude M=9. Followed by standard augmentation.
+
+3. HEAVY AUGMENTATION:
+   Standard + ColorJitter(brightness=0.4, contrast=0.4, saturation=0.2,
+   hue=0.1) + GaussianBlur(kernel=3, sigma=0.1-2.0).
+
+4. FDA (Fourier Domain Adaptation, Yang & Soatto 2020):
+   Swap low-frequency amplitude between source and target images:
+       F_src = FFT2{ I_gray_source }
+       F_tgt = FFT2{ I_gray_target }
+       A_src = |F_src|,  A_tgt = |F_tgt|,  phi_src = angle(F_src)
+
+       For small beta (0.01-0.05):
+           hs = max(1, int(H * beta / 2))
+           ws = max(1, int(W * beta / 2))
+           A_new = A_src.copy()
+           A_new[:hs, :ws] = A_tgt[:hs, :ws]     # top-left corner
+           A_new[:hs, -ws:] = A_tgt[:hs, -ws:]    # top-right
+           A_new[-hs:, :ws] = A_tgt[-hs, :ws]     # bottom-left
+           A_new[-hs:, -ws:] = A_tgt[-hs:, -ws:]  # bottom-right
+
+       F_new = A_new * exp(i * phi_src)
+       I_new = real( IFFT2{ F_new} )
+
+   This transfers the "overall look" (brightness, contrast) of the target
+   domain while preserving the source's spatial structure (phase).
+
+5. CORAL (Correlation Alignment, Sun & Saenko 2016):
+   Minimises the difference between source and target feature covariances:
+       L_CORAL = (1/4d^2) * || Cov_S - Cov_T ||_F^2
+
+   where Cov_S = (S^T * S) / (n_s - 1),  S = source_features - mean(source)
+   and d = feature dimensionality. Added to classification loss during
+   training with weight lambda=0.5.
+
+6. SBA BAND (our method):
+   See Step 04 for full equations. Adds noise proportional to the observed
+   shift spectrum, targeting mid-frequency bands.
+
+All methods use the same ViT-B/16 architecture, same preprocessing (Pipeline A),
+same random seed, and same train/test split.
 
 WHY IT MATTERS:
   If generic methods perform as well as SBA, then the frequency-domain

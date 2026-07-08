@@ -1,14 +1,44 @@
 """
-08_statistics.py -- Collect all results into one summary with proper statistics.
+08_statistics.py — Collect all results into one summary with proper statistics.
 
 STEP 8: STATISTICS AGGREGATION
 ==============================
 
 After running Steps 01-07, the results are spread across multiple JSON files.
-This script collects them into a single summary file with:
-  - Bootstrap 95% confidence intervals (over per-image correctness)
-  - McNemar paired tests (for comparing two classifiers on the same test set)
-  - Per-seed aggregation (mean +/- std across random seeds)
+This script collects them into a single summary file with proper statistical
+measures.
+
+STATISTICAL METHODS USED:
+=========================
+
+1. BOOTSTRAP CONFIDENCE INTERVALS (for accuracy estimates):
+   Given N binary correctness values c_1, ..., c_N (1=correct, 0=wrong):
+     (a) Resample N values WITH REPLACEMENT, compute mean
+     (b) Repeat B=2000 times
+     (c) 95% CI = [2.5th percentile, 97.5th percentile] of bootstrap means
+
+   This gives a honest interval for "if we repeated the experiment, where
+   would the accuracy likely fall?" Unlike the binomial approximation,
+   bootstrap makes NO assumptions about the distribution shape.
+
+2. McNEMAR'S TEST (for comparing two classifiers):
+   Given classifiers A and B tested on the SAME images:
+     n01 = # images A correct, B wrong
+     n10 = # images A wrong, B correct
+
+   Under the null hypothesis (A and B are equally good):
+     n01 ~ Binomial(n01 + n10, 0.5)
+
+   p-value = P( Binomial <= min(n01, n10) | n01+n10, 0.5 )  (two-sided)
+
+   If p < 0.05, the difference is statistically significant.
+   If p >= 0.05, we cannot distinguish the two classifiers.
+
+3. PER-SEED AGGREGATION (for multi-seed experiments):
+   For each augmentation strategy, report:
+     mean_accuracy = (1/K) * SUM_k accuracy_k    (K=5 seeds)
+     std_accuracy  = std(accuracy_1, ..., accuracy_K)
+     seed_ci_95    = bootstrap CI over the K seed accuracies
 
 WHY IT MATTERS:
   A single summary file makes it easy to check all key numbers in the paper

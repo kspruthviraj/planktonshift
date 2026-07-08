@@ -1,23 +1,56 @@
 """
-09_generality_test.py -- Do these frequency-domain findings work beyond plankton?
+09_generality_test.py — Do these frequency-domain findings work beyond plankton?
 
 STEP 9: GENERALITY TEST (NON-PLANKTON DATASETS)
 ================================================
 
 A common critique: "your findings only work because plankton are transparent."
 This script tests the frequency-domain framework on ANY imaging dataset, not
-just plankton. It can:
-  1. Run on parallel source/target directories (two different "cameras")
-  2. Simulate a second "instrument" from a single dataset using a deterministic
-     acquisition transform (resize method + gamma + JPEG compression)
+just plankton.
 
-The simulated-domain mode is itself an on-thesis manipulation: it injects a
-realistic instrument signature into the frequency domain, letting us test
-the framework without needing a second actual camera.
+MATHEMATICAL PIPELINE:
+======================
+
+Same as Steps 01 + 03 combined, but generalised to any dataset:
+
+Input: Two directories (source, target), each containing class subdirectories.
+       Or: one directory + --simulate-domains flag.
+
+Step 1 — Preprocess all images (Pipeline A: proportional padding + resize).
+
+Step 2 — For each image, compute radial amplitude profile:
+    A_bar(r) = radial_average( log(1 + |fftshift(FFT2{ I_gray })|) )
+
+Step 3 — For each frequency band (low, mid, high):
+    Build annular bandpass mask M_band(u, v) (see Step 03 for equations).
+    Apply mask, reconstruct filtered image.
+    Train ViT-B/16 on filtered source, test on filtered target.
+
+Step 4 — Domain accuracy (de-confounded):
+    For each band, extract radial amplitude features from BOTH domains.
+    Train logistic regression to predict domain.
+    Report delta vs all-frequencies baseline.
+
+SIMULATED DOMAINS (--simulate-domains):
+========================================
+When only one dataset is available, we simulate a second "instrument" by
+applying a deterministic acquisition transform:
+
+    Step A — Split images 80/20 into train/test (no data leakage).
+    Step B — For test images, apply simulate_acquisition():
+        1. Resize to 96x96 with BICUBIC, then back to 224x224 with NEAREST
+           (interpolation method signature — alters high-frequency content)
+        2. Gamma correction: I_new = I^0.9
+           (illumination signature — alters mid-frequency contrast)
+        3. JPEG compression at quality=70
+           (compression signature — adds high-frequency ringing artifacts)
+
+    The simulated domain has a known instrument signature embedded in its
+    frequency spectrum, providing a controlled test of the framework.
 
 WHY IT MATTERS:
   If the frequency-domain separation of species info (low freq) from instrument
-  artifacts (mid freq) holds across datasets, it's a general principle -- not a
+  artifacts (mid freq) holds across datasets, it's a general principle — not a
   plankton-specific coincidence.
 
 Usage:

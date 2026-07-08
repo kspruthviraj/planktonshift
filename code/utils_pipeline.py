@@ -5,12 +5,57 @@ This module centralises the CORRECTED pipeline (Pipeline A: Chen's Proportional
 Padding) used by ALL experiments, ensuring consistency between the Fourier
 analysis, frequency masking, SBA training, and temporal OOD evaluation.
 
-Key fixes vs original scripts:
-  - Unified preprocessing: always Proportional Padding (shrink + black-pad to
-    128, then resize to 224). No aspect-ratio squashing, no CenterCrop.
-  - Real bootstrap CIs over per-image correctness (not synthetic binomial).
-  - McNemar paired test for comparing two classifiers on the same test set.
-  - Frequency band definitions matching the paper (config.FREQ_BAND_FRACTIONS).
+EQUATIONS FOR KEY OPERATIONS:
+==============================
+
+1. PREPROCESSING (Pipeline A):
+   Input:  PIL Image of arbitrary size (H, W)
+   Step 1: Shrink keeping aspect ratio so max(H, W) = 128
+           ratio = 128 / max(H, W)
+           (H_new, W_new) = (int(H * ratio), int(W * ratio))
+           I_shrunk = resize(I, (H_new, W_new), LANCZOS)
+   Step 2: Black-pad to 128x128 square
+           I_pad = zeros(128, 128, 3)
+           offset = ((128 - W_new) // 2, (128 - H_new) // 2)
+           I_pad[offset:offset+H_new, offset:offset+W_new] = I_shrunk
+   Step 3: Resize to final size (224x224)
+           I_out = resize(I_pad, (224, 224), BILINEAR)
+   Step 4: Normalise to [0, 1]
+           I_out = I_out / 255.0
+
+2. AMPLITUDE SPECTRUM:
+   Input:  grayscale image I_gray(x, y)
+   F(u, v) = FFT2{ I_gray }                      (2D Fourier Transform)
+   F_shift = fftshift(F)                          (center zero-frequency)
+   A(u, v) = log(1 + |F_shift(u, v)|)            (log-amplitude)
+
+3. RADIAL AVERAGE:
+   For each radial bin r = 0, 1, ..., r_max:
+       A_bar(r) = mean{ A(u, v) : sqrt((u-cx)^2 + (v-cy)^2) == r }
+   where (cx, cy) = center of the spectrum, r_max = min(cx, cy).
+
+4. BANDPASS FILTER:
+   Given band edges (r_frac_inner, r_frac_outer) as fractions of r_max:
+       M(u, v) = 1  if  r_frac_inner * r_max <= r(u,v) <= r_frac_outer * r_max
+                 0  otherwise
+   F_filtered = fftshift(F) * M
+   I_filtered = real( IFFT2{ ifftshift(F_filtered) } )
+   Output: I_filtered clipped to [0, 1], replicated to 3 channels.
+
+5. BOOTSTRAP CI (for accuracy):
+   Given N binary values c_1, ..., c_N (1=correct, 0=wrong):
+   Repeat B=2000 times:
+       sample = resample N values with replacement
+       stat_b = mean(sample)
+   CI_95 = [percentile(stat, 2.5), percentile(stat, 97.5)]
+
+6. McNEMAR'S TEST:
+   Given predictions from classifiers A and B on the same N test images:
+       n01 = count(A correct AND B wrong)
+       n10 = count(A wrong AND B correct)
+   Under H0 (A and B equally good):  n01 ~ Binomial(n01+n10, 0.5)
+   p-value = 2 * P(Binomial <= min(n01, n10) | n01+n10, 0.5)
+   If p < 0.05, the difference is statistically significant.
 """
 import numpy as np
 from PIL import Image

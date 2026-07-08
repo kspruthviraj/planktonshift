@@ -10,10 +10,44 @@ neighbour to bicubic interpolation. This means that running the exact same
 code on the exact same images produces different pixel values depending on
 which Pillow version is installed — a "silent pipeline drift."
 
-This script measures:
-  1. How many pixels change between Pillow 6.x and 7.0 processing
-  2. Whether those changes affect classification accuracy on 10 OOD days
-  3. Whether the difference is statistically significant (McNemar test)
+MATHEMATICAL DESCRIPTION:
+=========================
+
+When resizing an image from size (H_src, W_src) to (H_dst, W_dst), each
+output pixel is computed differently depending on the interpolation method:
+
+1. NEAREST NEIGHBOUR (Pillow 6.x default):
+   I_dst(x, y) = I_src( round(x * H_src/H_dst), round(y * W_src/W_dst) )
+
+   Each output pixel copies the value of the single closest source pixel.
+   This is a step function — no smoothing, no new pixel values created.
+
+2. BICUBIC INTERPOLATION (Pillow 7.0+ default):
+   I_dst(x, y) = SUM_i SUM_j I_src(i, j) * W(i-x_s) * W(j-y_s)
+
+   where W(t) is the cubic kernel:
+       W(t) = (a+2)|t|^3 - (a+3)|t|^2 + 1         if |t| <= 1
+       W(t) = a|t|^3 - 5a|t|^2 + 8a|t| - 4a       if 1 < |t| <= 2
+       W(t) = 0                                     if |t| > 2
+
+   with a = -0.5 (Catmull-Rom). Each output pixel is a weighted average
+   of the 16 nearest source pixels (4x4 neighbourhood).
+
+   This creates NEW pixel values that never existed in the original image,
+   particularly at edges and boundaries where interpolation disagrees.
+
+IMPACT MEASUREMENT:
+   For each image pair (nearest vs bicubic):
+       residual(x, y) = |I_nearest(x, y) - I_bicubic(x, y)|
+       fraction_changed = count(residual > 0) / total_pixels
+       max_residual = max(residual)
+
+DOWNSTREAM IMPACT:
+   Process all OOD images with both methods, run Chen's trained BEiT models,
+   compare accuracy using McNemar's paired test:
+       n01 = images classified correctly by bicubic but not nearest
+       n10 = images classified correctly by nearest but not bicubic
+       p = binomtest(min(n01, n10), n01+n10, 0.5).pvalue
 
 WHY IT MATTERS:
   For monitoring networks that compare results across years, even tiny pixel
