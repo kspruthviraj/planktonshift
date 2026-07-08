@@ -181,20 +181,22 @@ The analysis pipeline uses **both** grayscale and per-channel RGB, depending on 
 
 ### Temporal OOD Performance Progression (ZooLake, 10 days, 35 classes)
 
-This table shows how each improvement accumulates. All use the same 3-model BEiT geometric ensemble and Chen's proportional-padding preprocessing.
+This table shows how each improvement accumulates. All use 3-model BEiT geometric ensemble and Chen's proportional-padding preprocessing unless noted.
 
-| Configuration | TTA | Macro OOD Accuracy | vs Chen's BEsT (83.05%) |
-|--------------|-----|--------------------|------------------------|
-| Chen baseline (no SBA) | No | **81.65%** | -1.40% |
-| Grayscale SBA finetuned | No | **82.11%** | -0.94% |
-| Grayscale SBA finetuned | Yes (4 rotations) | **82.51%** | -0.54% |
-| Per-channel RGB SBA finetuned | Yes (4 rotations) | **83.19%** | **+0.14%** |
+| # | Configuration | TTA | Macro OOD Acc | vs Chen BEsT |
+|---|--------------|-----|---------------|-------------|
+| 1 | Chen baseline (3 BEiT, no SBA) | No | **81.65%** | -1.40% |
+| 2 | Our grayscale SBA finetuned | No | **82.11%** | -0.94% |
+| 3 | Our grayscale SBA finetuned | Yes (4 rot) | **82.51%** | -0.54% |
+| 4 | Our per-channel RGB SBA finetuned | Yes (4 rot) | **83.19%** | **+0.14%** |
+| — | *Chen et al. BEsT (9 models, targeted aug)* | *Yes* | ***83.05%*** | *baseline* |
 
 Key observations:
-- **Grayscale SBA** (no TTA) improves over baseline by +0.46% (81.65% -> 82.11%)
+- **Grayscale SBA** (no TTA) improves over Chen baseline by +0.46% (81.65% -> 82.11%)
 - **TTA** adds +0.40% (82.11% -> 82.51%)
 - **Per-channel RGB** (vs grayscale) adds +0.68% (82.51% -> 83.19%)
-- The per-channel RGB gain (+0.68%) is larger than the grayscale SBA gain (+0.46%), confirming that colour carries significant domain information
+- Our best (83.19%) beats Chen's BEsT (83.05%) by +0.14%, despite using only 3 models vs Chen's 9
+- Chen's BEsT uses 9 models (3 architectures x 3 seeds) with targeted augmentations + TTA; we use 3 BEiT models with SBA + TTA
 
 ---
 
