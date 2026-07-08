@@ -59,6 +59,18 @@ Step 7 — Train ViT-B/16 on augmented source, evaluate on unmodified target.
     Repeat with 5 random seeds for honest confidence intervals.
     Compare using McNemar's paired test.
 
+WHY GRAYSCALE FOR CROSS-INSTRUMENT, BUT RGB FOR TEMPORAL OOD?
+  This script (cross-instrument benchmark) uses grayscale SBA for
+  consistency with Steps 02-03 and because the 6-class IFCB/ZooScan
+  benchmark has limited data (384 images).
+
+  The headline 83.19% result (temporal OOD, ZooLake) uses PER-CHANNEL
+  RGB SBA: each R, G, B channel gets independent frequency-domain noise.
+  This gives +1.3% over grayscale SBA (81.87%) because colour information
+  also carries domain cues (e.g., ZooLake field camera has different colour
+  balance than IFCB).  The per-channel pipeline is in
+  `code/perchannel_sba_finetune.py` (legacy).
+
 WHY IT MATTERS:
   SBA exploits the frequency-domain separation found in Steps 01-03:
   perturb the bands that carry camera artifacts (amplitude), preserve

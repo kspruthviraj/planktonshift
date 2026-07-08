@@ -58,6 +58,17 @@ INTERPRETATION:
   - If amp_swapped improves accuracy -> AMPLITUDE carries domain artifacts
   - If both_scrambled is near zero   -> experiment is working correctly
 
+WHY GRAYSCALE (NOT RGB)?
+  This experiment needs a single 2D FFT to cleanly decompose into
+  F(u,v) = A(u,v) * exp(i*phi(u,v)).  If we did per-channel FFT,
+  we'd get 3 separate (A, phi) pairs with no principled way to combine
+  them for the "does phase carry morphology?" question.  Grayscale
+  I_gray = mean(R, G, B) gives one clean decomposition.
+
+  Note: the headline OOD result (83.19%) DOES use per-channel RGB SBA
+  (see README). RGB matters for deployment accuracy (+1.3%), but not
+  for the mechanistic amplitude-vs-phase question.
+
 WHY IT MATTERS:
   If phase carries the biological shape (body outline, spines, horns), then
   augmentation methods should perturb amplitude (camera artifacts) while

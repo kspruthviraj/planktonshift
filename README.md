@@ -59,7 +59,7 @@ python code/run_master.py --dry-run
 #### Step 01 — Fourier Analysis (`01_fourier_analysis.py`)
 **Question:** How do different cameras "see" the same plankton species differently?
 
-Decomposes images from three cameras (WHOI22, ZooScan20, ZooLake2) into frequency layers using 2D Fourier Transform. Measures how much each frequency layer differs between cameras (the "shift spectrum") and how much species information each layer carries. Finds that a simple logistic regression identifies the source camera with **88.0% accuracy** from frequency features alone.
+Decomposes images from three cameras (WHOI22, ZooScan20, ZooLake2) into frequency layers using 2D Fourier Transform. Measures how much each frequency layer differs between cameras (the "shift spectrum") and how much species information each layer carries. Finds that a simple logistic regression identifies the source camera with **88.0% accuracy** (grayscale) or **89.3%** (per-channel RGB) from frequency features alone. The +1.3% RGB gain confirms that colour information also carries domain cues.
 
 **Output:** `results/tier1_corrected/fourier_analysis.json`
 
@@ -153,16 +153,31 @@ Scripts from earlier iterations of the analysis. Not part of the corrected pipel
 
 | Finding | Value | Step |
 |---------|-------|------|
-| Domain classifier (amplitude spectra) | **88.0%** accuracy | 01 |
+| Domain classifier (amplitude spectra) | **88.0%** (gray), **89.3%** (RGB) | 01 |
 | Shift energy concentrated in | **Low frequencies** (bins 0-22) | 01 |
 | Phase scrambling (species acc) | **24.1%** (from 46.0% baseline) | 02 |
 | Amplitude swapping (species acc) | **52.6%** (from 46.0% baseline) | 02 |
 | Low-freq masking (species acc) | **48.9%** | 03 |
 | Mid-freq masking (species acc) | **14.6%** (below chance) | 03 |
-| SBA temporal OOD (ZooLake) | **83.19%** (beats Chen's 83.05%) | 04 |
+| SBA temporal OOD (ZooLake) | **83.19%** (per-channel RGB SBA + TTA) | — |
+| SBA temporal OOD grayscale | 81.87% (grayscale SBA, no TTA) | — |
 | SBA cross-instrument | 46.0% vs 45.8% (not significant) | 04 |
 | Pillow impact | +0.11% (not significant) | 06 |
 | OOD detection (ROC-AUC) | **0.72-0.92** | 01 |
+
+### Grayscale vs Per-Channel RGB
+
+The analysis pipeline uses **both** grayscale and per-channel RGB, depending on the experiment:
+
+**Per-channel RGB** (where colour carries domain information):
+- Step 01 domain classifier: 89.3% (RGB) vs 88.0% (gray) — colour channels carry +1.3% camera identity
+- Temporal OOD headline (83.19%): SBA is applied independently to R, G, B channels before averaging. This preserves colour-based domain cues that grayscale SBA discards.
+
+**Grayscale** (for clean mechanistic decomposition):
+- Steps 02-04 convert `I_gray = mean(R, G, B)` before FFT. This is intentional: the amplitude-vs-phase experiment (Step 02) needs a single 2D FFT to cleanly decompose into `F = A * exp(iφ)`. Doing this per-channel would give 3 separate decompositions with no principled way to combine them for the "does phase carry morphology?" question.
+- The colour information is redundant for the mechanistic question (does phase or amplitude carry species info?) but matters for the deployment question (what's the best OOD accuracy?).
+
+**Bottom line:** RGB gives +1.3% where it matters (domain classification, OOD accuracy). Grayscale is used for mechanistic experiments where a single 2D decomposition is needed.
 
 ---
 

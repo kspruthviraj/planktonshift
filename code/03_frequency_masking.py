@@ -55,6 +55,13 @@ Step 6 — Domain accuracy (de-confounded):
     train logistic regression to predict domain (source vs target).
     Report delta vs the all-frequencies baseline.
 
+WHY GRAYSCALE (NOT RGB)?
+  The bandpass filter operates on a single 2D FFT.  Per-channel filtering
+  would work (filter R, G, B independently) but the mechanistic question
+  is "does this frequency band carry species info?" — a question about
+  spatial frequency content, not colour.  Grayscale isolates the spatial
+  frequency signal without confounding it with colour.
+
 WHY IT MATTERS:
   If low frequencies preserve species accuracy while mid frequencies do not,
   we have causal proof that biological shape lives in the low-frequency layer.
