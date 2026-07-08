@@ -1,10 +1,19 @@
 """
-run_statistics.py — Aggregate all results with REAL statistics (P0-6).
+08_statistics.py -- Collect all results into one summary with proper statistics.
 
-Collects results from all corrected experiments and computes:
-  - Real bootstrap CIs (over per-image correctness, not synthetic binomial)
-  - McNemar paired tests (where predictions are available)
-  - Per-seed aggregation with mean ± CI
+STEP 8: STATISTICS AGGREGATION
+==============================
+
+After running Steps 01-07, the results are spread across multiple JSON files.
+This script collects them into a single summary file with:
+  - Bootstrap 95% confidence intervals (over per-image correctness)
+  - McNemar paired tests (for comparing two classifiers on the same test set)
+  - Per-seed aggregation (mean +/- std across random seeds)
+
+WHY IT MATTERS:
+  A single summary file makes it easy to check all key numbers in the paper
+  against the actual computed results. Every number in the paper should be
+  traceable to this file.
 
 Output: results/tier1_corrected/statistics_summary.json
 """

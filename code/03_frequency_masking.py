@@ -1,15 +1,23 @@
 """
-run_frequency_masking_corrected.py — Causal frequency-masking experiment.
+03_frequency_masking.py -- Can a classifier identify plankton using only "bass" frequencies?
 
-FIXES (P0-2, P0-3, P0-4):
-  - Pipeline A (Proportional Padding) for all images.
-  - Band definitions from config.FREQ_BAND_FRACTIONS matching the paper
-    (low=0-22, mid=22-44, high=44+), NOT the fraction-of-Nyquist annuli.
-  - De-confounded domain accuracy: amplitude-feature classifier on held-out
-    images from BOTH domains (not CLS of a source-trained model). Reports
-    the DELTA over the no-masking baseline.
-  - Real bootstrap CIs on species accuracy.
-  - Uses vendored data paths (no external dependencies).
+STEP 3: CAUSAL FREQUENCY MASKING EXPERIMENT
+============================================
+
+Step 01 showed that cameras differ in certain frequency bands. But is that
+just correlation, or is it causal? This script tests causation by training
+classifiers on images where we KEEP ONLY certain frequency layers:
+
+  - Low frequencies only (bins 0-22): the "bass" -- overall shape, outline
+  - Mid frequencies only (bins 22-44): the "midrange" -- fine texture
+  - High frequencies only (bins 44+): the "treble" -- pixel-level detail
+
+If low frequencies preserve species accuracy while mid frequencies do not,
+we have causal proof that biological shape lives in the low-frequency layer.
+
+We also measure whether each band lets a classifier tell which camera took
+the image (domain accuracy). If mid frequencies carry camera identity but
+not species identity, that's the separation we need for targeted augmentation.
 
 Output: results/tier1_corrected/frequency_masking.json
 """
@@ -99,7 +107,7 @@ def predict_species(model, dataset, batch_size=64):
 # De-confounded domain accuracy: amplitude features from BOTH domains
 def amplitude_domain_accuracy(source_root, target_root, classes_dict, band="all", max_per_class=40):
     """Domain classifier on radial amplitude features restricted to a band.
-    Uses held-out images from BOTH domains — not CLS of a source-trained model.
+    Uses held-out images from BOTH domains -- not CLS of a source-trained model.
     """
     Xs, _ = _amp_features_band(source_root, classes_dict, band, max_per_class)
     Xt, _ = _amp_features_band(target_root, classes_dict, band, max_per_class)

@@ -7,6 +7,9 @@ data/
 # Embedded git repos
 code/chen_repo
 
+# Legacy code (pre-correction scripts)
+code/legacy/
+
 # Python
 __pycache__/
 *.py[cod]

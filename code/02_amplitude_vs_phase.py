@@ -1,23 +1,24 @@
 """
-run_amplitude_vs_phase.py — Controlled amplitude-vs-phase experiment (P1-1).
+02_amplitude_vs_phase.py -- Does the shape of a plankton live in the "bass" or the "treble"?
 
-This is the rigorous version of the "phase-preserving hurts" finding.
-Instead of a single-seed SBA variant, we run a CONTROLLED experiment with
-three conditions on the SAME data (Pipeline A):
+STEP 2: CONTROLLED AMPLITUDE-VS-PHASE EXPERIMENT
+=================================================
 
-  (a) Phase-scrambled: randomize phase, keep amplitude → tests if phase alone
-      (spatial arrangement) is sufficient for species ID.
-  (b) Amplitude-swapped: swap amplitude between source/target domain images,
-      keep phase → tests if amplitude carries the instrument signature.
-  (c) Both-scrambled: scramble both amplitude and phase → negative control.
+Every image can be decomposed into two components in frequency space:
+  - AMPLITUDE: how strong each frequency is (like the volume of each note)
+  - PHASE: where each frequency appears in the image (like the timing of each note)
 
-For each condition, we measure:
-  - Species accuracy (on target domain ZooScan)
-  - Domain accuracy (amplitude-feature classifier on both domains)
+This script tests which component carries the species-discriminative information:
+  (a) Phase-scrambled: keep amplitude, randomise phase -> if species info is in
+      phase, accuracy should drop
+  (b) Amplitude-swapped: swap amplitude with a target-domain image, keep phase
+      -> if amplitude carries camera artifacts, accuracy should improve
+  (c) Both-scrambled: randomise both -> negative control
 
-If amplitude carries morphology (the paper's claim), then:
-  - Phase-scrambled should preserve species accuracy (morphology in amplitude)
-  - Amplitude-swapped should hurt species accuracy (morphology disrupted)
+WHY IT MATTERS:
+  If phase carries the biological shape (body outline, spines, horns), then
+  augmentation methods should perturb amplitude (camera artifacts) while
+  preserving phase (biology). This is exactly what SBA does.
 
 Output: results/tier1_corrected/amplitude_vs_phase.json
 """
@@ -220,8 +221,8 @@ def main():
             ci = f"[{r['ci_95'][0]:.3f},{r['ci_95'][1]:.3f}]"
             print(f"{c:<18} {r['species_accuracy']:>12.3f} {ci:>18}")
     print(f"\nInterpretation:")
-    print(f"  If phase_scrambled preserves species acc → amplitude carries morphology")
-    print(f"  If amp_swapped hurts species acc → amplitude carries diagnostic info")
+    print(f"  If phase_scrambled preserves species acc -> amplitude carries morphology")
+    print(f"  If amp_swapped hurts species acc -> amplitude carries diagnostic info")
     print(f"\nSaved: {OUT}")
 
 

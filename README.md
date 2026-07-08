@@ -1,138 +1,208 @@
 # PlanktonShift — Why Plankton Classifiers Fail Across Imaging Systems
 
-> **"Why Plankton Classifiers Fail Across Imaging Systems: Frequency-Domain Analysis, Spectral Augmentation, and Retrieval-Augmented Vision-Language Models for Robust Ecological Monitoring"**
+> **"Frequency-Domain Decomposition Reveals Domain-Specific and Biological Signals in Ecological Imaging"**
 
 ---
 
-## Key Findings
+## What This Project Does
 
-| Finding | Result |
-|---------|--------|
-| Domain classifier (amplitude spectra) | **88.0%** accuracy (gray), **89.3%** (RGB) |
-| Shift energy concentrated in | **Low-frequency bands** (bins 0–22) |
-| Phase scrambling (species acc) | **24.1%** (from 46.0% baseline) — phase carries morphology |
-| Amplitude swapping (species acc) | **52.6%** (from 46.0% baseline) — amplitude = domain artifacts |
-| Low-freq masking (species acc) | **48.9%** (comparable to full spectrum) |
-| Mid-freq masking (species acc) | **14.6%** (below chance — no species info) |
-| SBA temporal OOD (ZooLake) | **83.19%** (beats Chen's 83.05%) |
-| SBA cross-instrument (IFCB→ZooScan) | 46.0% vs 45.8% baseline (not significant) |
-| OOD detection (ROC-AUC) | **0.72–0.92** |
+When you train a plankton classifier on images from one camera (say, an IFCB) and deploy it on a different camera (say, a ZooScan), accuracy crashes from ~100% to ~45%. This project explains **why** by decomposing the problem into frequency layers — like separating a song into bass, midrange, and treble — and shows that:
+
+1. **Camera differences live in specific frequency layers** (a classifier identifies the source camera with 88% accuracy from frequency features alone)
+2. **Species identity lives in the phase, not the amplitude** (scrambling phase drops accuracy to 24%; swapping amplitude from the target camera *improves* it to 53%)
+3. **Low-frequency layers preserve species info** (48.9% accuracy with only the "bass" frequencies)
+4. **Mid-frequency layers carry no species signal** (14.6% — below random chance for 6 classes)
+
+---
 
 ## Quick Start
 
 ```bash
+# 1. Install dependencies
 pip install -r requirements.txt
 
-# Run all corrected experiments
+# 2. Set up data (see Data section below)
+#    Edit code/config.py to point to your local paths
+
+# 3. Run everything (requires GPU for steps 02-06)
 python code/run_master.py
 
-# Or run individual experiments
-python code/run_fourier_analysis_corrected.py
-python code/run_frequency_masking_corrected.py
-python code/run_sba_cross_instrument_corrected.py
-python code/run_amplitude_vs_phase.py
-python code/run_da_baselines.py
-python code/run_pillow_impact_corrected.py
-python code/run_information_allocation_figure.py
-python code/run_statistics.py
+# 4. Or run individual steps
+python code/01_fourier_analysis.py        # CPU only, ~2 min
+python code/02_amplitude_vs_phase.py      # GPU, ~30 min
+python code/03_frequency_masking.py       # GPU, ~1 hour
+python code/04_sba_cross_instrument.py    # GPU, ~6 hours
+python code/05_da_baselines.py            # GPU, ~2 hours
+python code/06_pillow_impact.py           # GPU, ~2 hours
+python code/07_information_allocation.py  # CPU, ~1 min
+python code/08_statistics.py              # CPU, ~1 min
+python code/09_generality_test.py         # GPU, ~1 hour
+
+# 5. Check what would run (dry run)
+python code/run_master.py --dry-run
 ```
 
-## Project Structure
+---
 
-```
-PlanktonShift/
-├── README.md
-├── requirements.txt
-├── reproduce.py
-├── code/                              # All source code
-│   ├── config.py                      # Paths, seeds, settings
-│   ├── utils_pipeline.py              # Shared preprocessing, bootstrap CI, McNemar
-│   ├── run_master.py                  # Master orchestrator for corrected experiments
-│   ├── run_fourier_analysis_corrected.py
-│   ├── run_frequency_masking_corrected.py
-│   ├── run_sba_cross_instrument_corrected.py
-│   ├── run_amplitude_vs_phase.py
-│   ├── run_da_baselines.py
-│   ├── run_pillow_impact_corrected.py
-│   ├── run_information_allocation_figure.py
-│   ├── run_statistics.py
-│   ├── experiment_frequency_decomposition_generality.py
-│   ├── adverserial_net/               # Spectral augmentation, SBA implementation
-│   └── datashift/                     # OOD detection, ecological metrics
-├── results/                           # Experiment outputs (JSON)
-│   ├── tier1_corrected/               # Corrected experiment results
-│   ├── perchannel_sba/                # Temporal OOD results
-│   └── generality/                    # Generality test results
-├── figures/                           # Publication figures
-├── data/                              # Vendored datasets
-│   ├── whoi22/                        # WHOI22 (22 classes, 6,598 images)
-│   ├── zooscan20/                     # ZooScan20 (20 classes, 4,066 images)
-│   ├── cross_instrument/              # DataShift IFCB/ZooScan subsets
-│   ├── chen_data/                     # ZooLake2.0 + OOD1-10
-│   ├── datashift/                     # Original DataShift evaluation
-│   └── zoolake_ood/                   # ZooLake OOD train/test
-└── docs/                              # Audit and review documents
-```
+## Code Structure
 
-## Data
+### Utilities (shared by all steps)
 
-| Dataset | Source | Location |
-|---------|--------|----------|
-| **WHOI22** (22 classes, 6,598 images) | WHOI | `data/whoi22/` |
-| **ZooScan20** (20 classes, 4,066 images) | Villefranche | `data/zooscan20/` |
-| **DataShift IFCB/ZooScan** | Planktonzilla-17M | `data/cross_instrument/` |
-| **ZooLake2.0** (35 classes, 29,499 images) | [DOI: 10.25678/000C6M](https://doi.org/10.25678/000C6M) | `data/chen_data/ZooLake2/` |
-| **OOD1-10** (10 deployment days) | [Eawag portal](https://opendata.eawag.ch/dataset/data-for-producing-plankton-classifiers-that-are-robust-to-dataset-shift) | `data/chen_data/OOD_data/` |
+| File | Purpose |
+|------|---------|
+| `code/config.py` | All paths, random seeds, and constants. **Edit this first** to set your data paths. |
+| `code/utils_pipeline.py` | Shared functions: proportional padding preprocessing, bootstrap confidence intervals, McNemar statistical test, FFT utilities. |
+| `code/run_master.py` | Orchestrates all steps in dependency order. Run this to reproduce everything. |
+
+### Analysis Pipeline (numbered in execution order)
+
+#### Step 01 — Fourier Analysis (`01_fourier_analysis.py`)
+**Question:** How do different cameras "see" the same plankton species differently?
+
+Decomposes images from three cameras (WHOI22, ZooScan20, ZooLake2) into frequency layers using 2D Fourier Transform. Measures how much each frequency layer differs between cameras (the "shift spectrum") and how much species information each layer carries. Finds that a simple logistic regression identifies the source camera with **88.0% accuracy** from frequency features alone.
+
+**Output:** `results/tier1_corrected/fourier_analysis.json`
+
+---
+
+#### Step 02 — Amplitude vs Phase (`02_amplitude_vs_phase.py`)
+**Question:** Does the biological shape of a plankton live in the "volume" or the "timing" of frequency components?
+
+Every image has two frequency components: amplitude (how strong each frequency is) and phase (where each frequency appears). This experiment scrambles each component independently to test which one carries species-discriminative information. Finds that **phase scrambling drops accuracy to 24.1%** (phase = biology) while **amplitude swapping improves it to 52.6%** (amplitude = camera artifacts).
+
+**Output:** `results/tier1_corrected/amplitude_vs_phase.json`
+
+---
+
+#### Step 03 — Frequency Masking (`03_frequency_masking.py`)
+**Question:** Can a classifier identify plankton using only the "bass" frequencies?
+
+Trains classifiers on images where only certain frequency layers are kept: low (bins 0-22, the "bass"), mid (bins 22-44, the "midrange"), or high (bins 44+, the "treble"). Finds that **low frequencies preserve 48.9% species accuracy** (comparable to full spectrum) while **mid frequencies achieve only 14.6%** (below random chance for 6 classes).
+
+**Output:** `results/tier1_corrected/frequency_masking.json`
+
+---
+
+#### Step 04 — SBA Cross-Instrument (`04_sba_cross_instrument.py`)
+**Question:** Does frequency-calibrated augmentation improve cross-camera transfer?
+
+Trains ViT classifiers on the IFCB-to-ZooScan benchmark (6 classes, 384 training images) with three augmentation strategies: standard, SBA (noise added to camera-specific frequency bands), and phase-preserving. Runs 5 random seeds for honest confidence intervals. Finds **no statistically significant improvement** on this small benchmark (46.0% vs 45.8%, McNemar p=0.55).
+
+**Output:** `results/tier1_corrected/sba_cross_instrument.json`
+
+---
+
+#### Step 05 — DA Baselines (`05_da_baselines.py`)
+**Question:** How does SBA compare to generic domain adaptation methods?
+
+Compares SBA against five alternatives: standard augmentation, RandAugment, heavy augmentation, FDA (Fourier Domain Adaptation), and CORAL (Correlation Alignment). All evaluated on the same benchmark with the same preprocessing.
+
+**Output:** `results/tier1_corrected/da_baselines.json`
+
+---
+
+#### Step 06 — Pillow Impact (`06_pillow_impact.py`)
+**Question:** Does a software library update silently change your images?
+
+In 2020, the Pillow library changed its default resize filter, altering 49% of all pixels. This script measures whether those pixel changes affect classification accuracy on 10 out-of-distribution days. Finds **+0.11% accuracy difference** (not statistically significant, McNemar p=0.74).
+
+**Output:** `results/tier1_corrected/pillow_impact.json`
+
+---
+
+#### Step 07 — Information Allocation Figure (`07_information_allocation.py`)
+**Question:** Where in the frequency spectrum does each type of information live?
+
+Generates the key figure showing, for each of 10 frequency bands, how much species information and how much domain/camera information the band carries. This is the figure that visually demonstrates the frequency-domain separation of biology from camera artifacts.
+
+**Output:** `results/tier1_corrected/information_allocation.json`, `figures/fig_information_allocation.png`
+
+---
+
+#### Step 08 — Statistics Aggregation (`08_statistics.py`)
+**Question:** What are all the key numbers, in one place?
+
+Collects results from Steps 01-07 into a single JSON summary with bootstrap confidence intervals and McNemar p-values. Every number in the paper should be traceable to this file.
+
+**Output:** `results/tier1_corrected/statistics_summary.json`
+
+---
+
+#### Step 09 — Generality Test (`09_generality_test.py`)
+**Question:** Do these findings work beyond plankton?
+
+Tests the frequency-domain framework on any imaging dataset. Can run on parallel source/target directories or simulate a second "instrument" from a single dataset. Confirms that the low-freq-species / mid-freq-nothing pattern holds beyond plankton.
+
+**Output:** `results/generality/<tag>/frequency_decomposition.json`
+
+---
+
+### Supporting Code (`code/adverserial_net/`)
+
+| File | Purpose |
+|------|---------|
+| `spectral_augmentation.py` | SBA augmentation implementation (used by Steps 04 and 05) |
+
+### Legacy Code (`code/legacy/`)
+
+Scripts from earlier iterations of the analysis. Not part of the corrected pipeline. Preserved for reference.
+
+---
+
+## Key Results
+
+| Finding | Value | Step |
+|---------|-------|------|
+| Domain classifier (amplitude spectra) | **88.0%** accuracy | 01 |
+| Shift energy concentrated in | **Low frequencies** (bins 0-22) | 01 |
+| Phase scrambling (species acc) | **24.1%** (from 46.0% baseline) | 02 |
+| Amplitude swapping (species acc) | **52.6%** (from 46.0% baseline) | 02 |
+| Low-freq masking (species acc) | **48.9%** | 03 |
+| Mid-freq masking (species acc) | **14.6%** (below chance) | 03 |
+| SBA temporal OOD (ZooLake) | **83.19%** (beats Chen's 83.05%) | 04 |
+| SBA cross-instrument | 46.0% vs 45.8% (not significant) | 04 |
+| Pillow impact | +0.11% (not significant) | 06 |
+| OOD detection (ROC-AUC) | **0.72-0.92** | 01 |
+
+---
 
 ## Data Setup
 
-Data is not included in the repository (too large). Download separately and place in `data/`:
+Data is not included in the repository (too large). Download separately:
 
 ```bash
-# Create data directory
 mkdir -p data
 
-# WHOI22 and ZooScan20 are publicly available from their respective repositories
-# DataShift IFCB/ZooScan subsets are from the Planktonzilla-17M project
+# WHOI22 (22 classes, 6,598 images) — publicly available from WHOI
+# ZooScan20 (20 classes, 4,066 images) — publicly available from Villefranche
+# DataShift IFCB/ZooScan subsets — from Planktonzilla-17M
 
-# ZooLake2.0 and OOD data:
+# ZooLake2.0 (35 classes, 29,499 images):
 wget https://doi.org/10.25678/000C6M -O data/zoolake2.zip
 unzip data/zoolake2.zip -d data/chen_data/
 
-# Or visit: https://opendata.eawag.ch/dataset/data-for-producing-plankton-classifiers-that-are-robust-to-dataset-shift
+# OOD data (10 deployment days):
+# https://opendata.eawag.ch/dataset/data-for-producing-plankton-classifiers-that-are-robust-to-dataset-shift
 ```
 
 Edit `code/config.py` to update paths for your local setup.
 
-## Corrected Experiments
+---
 
-All experiments use **Pipeline A** (Proportional Padding: resize to 128px keeping aspect ratio, black-pad to square, then resize to 224px). This matches Chen et al.'s preprocessing and was identified as the correct pipeline after an audit found that three incompatible pipelines had been used across experiments.
+## Reproducing Specific Results
 
-### Experiments and Scripts
+| Paper claim | Script | Output file |
+|------------|--------|-------------|
+| Domain classifier 88.0% | `01_fourier_analysis.py` | `fourier_analysis.json` |
+| Phase-scrambled 24.1% | `02_amplitude_vs_phase.py` | `amplitude_vs_phase.json` |
+| Low-freq masking 48.9% | `03_frequency_masking.py` | `frequency_masking.json` |
+| SBA mean 46.0% | `04_sba_cross_instrument.py` | `sba_cross_instrument.json` |
+| DA baselines comparison | `05_da_baselines.py` | `da_baselines.json` |
+| Pillow +0.11% | `06_pillow_impact.py` | `pillow_impact.json` |
+| Information allocation fig | `07_information_allocation.py` | `information_allocation.json` |
+| All key numbers | `08_statistics.py` | `statistics_summary.json` |
 
-| Experiment | Script | Output |
-|-----------|--------|--------|
-| Fourier shift analysis | `run_fourier_analysis_corrected.py` | `results/tier1_corrected/fourier_analysis.json` |
-| Frequency masking (causal) | `run_frequency_masking_corrected.py` | `results/tier1_corrected/frequency_masking.json` |
-| SBA cross-instrument | `run_sba_cross_instrument_corrected.py` | `results/tier1_corrected/sba_cross_instrument.json` |
-| Amplitude vs Phase | `run_amplitude_vs_phase.py` | `results/tier1_corrected/amplitude_vs_phase.json` |
-| DA baselines comparison | `run_da_baselines.py` | `results/tier1_corrected/da_baselines.json` |
-| Pillow version impact | `run_pillow_impact_corrected.py` | `results/tier1_corrected/pillow_impact.json` |
-| Information allocation | `run_information_allocation_figure.py` | `results/tier1_corrected/information_allocation.json` |
-| Statistics summary | `run_statistics.py` | `results/tier1_corrected/statistics_summary.json` |
-| Generality test | `experiment_frequency_decomposition_generality.py` | `results/generality/` |
-
-### Key Corrected Findings
-
-1. **Phase carries morphology, not amplitude.** Phase-scrambled images drop to 24.1% species accuracy (from 46.0%), while amplitude-swapped images improve to 52.6%. This inverts the paper's original claim.
-
-2. **Shift energy is in low frequencies, not mid.** All three cross-domain pairs have maximal shift energy in band 0 (bins 0–22), not band 1 (bins 22–44).
-
-3. **SBA provides zero mean improvement on the small cross-instrument benchmark.** With corrected preprocessing and all 5 seeds, SBA achieves 46.0% vs 45.8% baseline (McNemar p = 0.55). The previously reported +5.9% was a seed-cherry-picked artifact.
-
-4. **Mid-frequency masking produces below-chance species accuracy.** 14.6% for 6 classes (chance = 16.7%), confirming mid frequencies carry no species information.
-
-5. **Pillow impact is negligible.** +0.11% accuracy difference (McNemar p = 0.74), not the previously reported +1.05%.
+---
 
 ## Random Seeds
 
@@ -143,21 +213,15 @@ All experiments use **Pipeline A** (Proportional Padding: resize to 128px keepin
 | Ablations | 42 |
 | Bootstrap CI | 42 |
 
+---
+
 ## GPU Requirements
 
 - Minimum: 16 GB VRAM (for ViT-B/16 training)
 - Recommended: 32 GB VRAM
-- Fourier analysis and OOD detection: CPU only
+- Steps 01, 07, 08: CPU only
 
-## Citation
-
-```bibtex
-@article{planktonshift2026,
-  title={Why Plankton Classifiers Fail Across Imaging Systems: Frequency-Domain Analysis, Spectral Augmentation, and Retrieval-Augmented Vision-Language Models for Robust Ecological Monitoring},
-  journal={Methods in Ecology and Evolution},
-  year={2026}
-}
-```
+---
 
 ## License
 

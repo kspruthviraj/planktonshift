@@ -1,13 +1,33 @@
 """
-run_fourier_analysis_corrected.py — Fourier shift analysis with Pipeline A.
+01_fourier_analysis.py — How do different cameras "see" plankton differently?
 
-FIXES (P0-2):
-  - Uses Proportional Padding (Pipeline A) instead of direct aspect-ratio
-    squashing. This ensures the frequency spectra reflect real image content,
-    not padding/squashing artifacts.
-  - Supports per-channel RGB analysis (not just grayscale), preserving colour
-    domain cues that ZooLake (field camera) carries.
-  - Uses vendored data paths from config.py (no external dependencies).
+STEP 1: FOURIER-DOMAIN CHARACTERISATION OF CROSS-INSTRUMENT SHIFT
+==================================================================
+
+When two different cameras photograph the same plankton species, the images
+look different — not because the organism changed, but because the camera's
+lighting, resolution, and optics are different. This script decomposes those
+differences into frequency layers using a 2D Fourier Transform (the same
+math behind audio equalisers, but for images).
+
+Think of it like separating a song into bass, midrange, and treble. We do
+the same for images: low frequencies = overall shape and brightness, mid
+frequencies = fine texture, high frequencies = pixel-level noise.
+
+WHAT THIS SCRIPT DOES:
+  1. Loads plankton images from three cameras (WHOI22, ZooScan20, ZooLake2)
+  2. Converts each image to frequency space (2D FFT)
+  3. Measures how much each frequency layer differs between cameras
+     (the "shift spectrum")
+  4. Trains a simple classifier to tell which camera took an image,
+     using only frequency features
+  5. Measures how much species information each frequency band carries
+
+WHY IT MATTERS:
+  If cameras differ mostly in mid frequencies but species info is in low
+  frequencies, we can augment only the camera-specific bands during training
+  — making the model robust to camera differences without losing the ability
+  to identify species.
 
 Output: results/tier1_corrected/fourier_analysis.json
 """

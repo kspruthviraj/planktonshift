@@ -1,12 +1,23 @@
 """
-run_sba_cross_instrument_corrected.py — SBA cross-instrument with Pipeline A + all seeds.
+04_sba_cross_instrument.py -- Does frequency-calibrated augmentation help classifiers?
 
-FIXES (P0-2, P0-7):
-  - Pipeline A (Proportional Padding) for all training and evaluation.
-  - Runs ALL 5 seeds (42, 999, 789, 123, 456), reports mean ± CI, not best seed.
-  - Stores per-image predictions for McNemar paired test vs baseline.
-  - Includes phase-preserving SBA with multiple seeds (was single-seed before).
-  - Uses vendored data paths (no external dependencies).
+STEP 4: SPECTRAL BAND ADVERSARIAL (SBA) AUGMENTATION
+=====================================================
+
+Now that we know which frequency bands carry camera artifacts (Step 01) and
+which carry species info (Step 03), we can build a smarter augmentation:
+during training, we add noise ONLY to the camera-specific frequency bands,
+teaching the model to ignore camera differences while preserving species
+recognition.
+
+This script trains ViT classifiers on the IFCB->ZooScan cross-instrument
+benchmark (6 shared classes, 384 training images) with three strategies:
+  1. Standard augmentation (baseline)
+  2. SBA band augmentation (noise calibrated to shift spectrum from Step 01)
+  3. Phase-preserving augmentation (perturb amplitude, keep phase)
+
+Each strategy is run with 5 different random seeds to get honest confidence
+intervals, not cherry-picked best-seed results.
 
 Output: results/tier1_corrected/sba_cross_instrument.json
 """
@@ -87,7 +98,7 @@ class PhasePreserveSBA:
 
 
 def load_shift_spectrum():
-    """Load the IFCB→ZooScan shift spectrum from the corrected Fourier analysis."""
+    """Load the IFCB->ZooScan shift spectrum from the corrected Fourier analysis."""
     path = RESULTS / "tier1_corrected" / "fourier_analysis.json"
     if path.exists():
         with open(path) as f:
@@ -206,7 +217,7 @@ def main():
             "labels": labels.tolist(),
             "preds_by_seed": all_preds_by_seed,
         }
-        print(f"\n  {aug_name}: mean={mean_acc:.4f}±{std_acc:.4f} CI[{seed_lo:.4f},{seed_hi:.4f}]")
+        print(f"\n  {aug_name}: mean={mean_acc:.4f}+/-{std_acc:.4f} CI[{seed_lo:.4f},{seed_hi:.4f}]")
 
     # McNemar: best SBA seed vs best baseline seed (paired on same test set)
     if "standard" in results and "sba_band" in results:

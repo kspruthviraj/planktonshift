@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """
-run_master.py — Master orchestrator for all corrected experiments.
+run_master.py — Run all corrected experiments in order.
 
-Runs experiments in dependency order:
-  Phase 1 (CPU, fast): Fourier analysis, information allocation figure
-  Phase 2 (GPU, moderate): Frequency masking, amplitude vs phase, DA baselines
-  Phase 3 (GPU, heavy): SBA cross-instrument (5 seeds × 3 strategies)
-  Phase 4 (GPU, heavy): Pillow impact (evaluates on 10 OOD days × 2 resize methods)
-  Phase 5 (CPU, fast): Statistics aggregation
+This script orchestrates the entire analysis pipeline. Each step produces
+results that the next step may depend on (e.g., the Fourier analysis produces
+the shift spectrum that SBA uses).
+
+Steps are grouped into phases by resource requirement:
+  Phase 1 (CPU only, ~5 min):  Fourier analysis + information allocation figure
+  Phase 2 (GPU, ~1-2 hours):   Frequency masking, amplitude vs phase, DA baselines
+  Phase 3 (GPU, ~6 hours):     SBA cross-instrument (5 seeds × 3 strategies)
+  Phase 4 (GPU, ~2 hours):     Pillow impact (10 OOD days × 2 resize methods)
+  Phase 5 (CPU, ~1 min):       Aggregate statistics
 
 Usage:
-    python code/run_master.py [--phase N] [--dry-run]
+    python code/run_master.py              # Run everything
+    python code/run_master.py --phase 1    # Run only phase 1
+    python code/run_master.py --dry-run    # Show what would run
 """
 import sys, os, time, argparse, subprocess
 from pathlib import Path
@@ -24,22 +30,22 @@ PYTHON = sys.executable
 
 PHASES = {
     1: [
-        ("Fourier Analysis (Pipeline A)", "run_fourier_analysis_corrected.py"),
-        ("Information Allocation Figure", "run_information_allocation_figure.py"),
+        ("01 Fourier Analysis", "01_fourier_analysis.py"),
+        ("07 Information Allocation Figure", "07_information_allocation.py"),
     ],
     2: [
-        ("Frequency Masking (corrected)", "run_frequency_masking_corrected.py"),
-        ("Amplitude vs Phase", "run_amplitude_vs_phase.py"),
-        ("DA Baselines", "run_da_baselines.py"),
+        ("03 Frequency Masking", "03_frequency_masking.py"),
+        ("02 Amplitude vs Phase", "02_amplitude_vs_phase.py"),
+        ("05 DA Baselines", "05_da_baselines.py"),
     ],
     3: [
-        ("SBA Cross-Instrument (5 seeds × 3 strategies)", "run_sba_cross_instrument_corrected.py"),
+        ("04 SBA Cross-Instrument (5 seeds)", "04_sba_cross_instrument.py"),
     ],
     4: [
-        ("Pillow Impact (corrected weighting)", "run_pillow_impact_corrected.py"),
+        ("06 Pillow Impact", "06_pillow_impact.py"),
     ],
     5: [
-        ("Statistics Aggregation", "run_statistics.py"),
+        ("08 Statistics Aggregation", "08_statistics.py"),
     ],
 }
 
@@ -49,11 +55,11 @@ def run_script(name, script, dry_run=False):
     cmd = [PYTHON, str(CODE / script)]
     print(f"\n{'='*60}")
     print(f"  Running: {name}")
-    print(f"  Script:  {script}")
-    print(f"  Log:     {log_file}")
+    print(f"  Script:  code/{script}")
+    print(f"  Log:     {log_file.relative_to(ROOT)}")
     print(f"{'='*60}")
     if dry_run:
-        print(f"  [DRY RUN] {cmd}")
+        print(f"  [DRY RUN] {' '.join(cmd)}")
         return 0
     t0 = time.time()
     with open(log_file, "w") as f:
@@ -66,14 +72,14 @@ def run_script(name, script, dry_run=False):
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description="Run all corrected experiments")
     ap.add_argument("--phase", type=int, default=0, help="Run only phase N (0=all)")
-    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--dry-run", action="store_true", help="Show commands without running")
     args = ap.parse_args()
 
     phases_to_run = [args.phase] if args.phase > 0 else sorted(PHASES.keys())
     print(f"PlanktonShift — Master Experiment Runner")
-    print(f"Phases: {phases_to_run}")
+    print(f"Phases to run: {phases_to_run}")
     print(f"Dry run: {args.dry_run}")
 
     results = {}

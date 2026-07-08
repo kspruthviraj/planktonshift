@@ -1,16 +1,26 @@
 """
-run_da_baselines.py — Generic domain adaptation baselines (P1-2).
+05_da_baselines.py -- How does SBA compare to generic domain adaptation methods?
 
-Compares SBA against generic DA/augmentation methods on the SAME benchmark
-(IFCB→ZooScan, Pipeline A):
+STEP 5: DOMAIN ADAPTATION BASELINES COMPARISON
+===============================================
 
-  1. Standard augmentation (baseline)
-  2. RandAugment (strong generic augmentation — timm standard)
-  3. CORAL (Correlation Alignment — feature-level alignment, Sun & Saenko 2016)
-  4. FDA (Fourier Domain Adaptation — Yang & Soatto 2020, amplitude swap)
-  5. SBA band (our calibrated method)
+SBA is a domain adaptation (DA) method specifically designed for frequency-
+domain shift. But there are generic DA methods that don't use frequency
+analysis at all. This script compares SBA against:
 
-This answers the reviewer question: "why frequency decomposition, not generic DA?"
+  - Standard augmentation (random flips, rotations)
+  - RandAugment (strong generic augmentation)
+  - Heavy augmentation (color jitter, blur, rotations)
+  - FDA (Fourier Domain Adaptation -- swaps low-frequency amplitude)
+  - CORAL (Correlation Alignment -- matches feature statistics)
+
+All methods are evaluated on the same IFCB->ZooScan benchmark with the same
+preprocessing pipeline and random seed, so the comparison is fair.
+
+WHY IT MATTERS:
+  If generic methods perform as well as SBA, then the frequency-domain
+  analysis (Steps 01-03) was unnecessary. If SBA outperforms, it validates
+  the frequency-domain approach.
 
 Output: results/tier1_corrected/da_baselines.json
 """

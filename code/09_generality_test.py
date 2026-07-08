@@ -1,61 +1,38 @@
 """
-experiment_frequency_decomposition_generality.py
+09_generality_test.py -- Do these frequency-domain findings work beyond plankton?
+
+STEP 9: GENERALITY TEST (NON-PLANKTON DATASETS)
 ================================================
-Causal frequency-decomposition experiment, generalized to ANY imaging dataset.
 
-PURPOSE
--------
-This is the *clean* version of the mechanistic core experiment
-(``code/tier1_frequency_masking.py``). It is designed to:
+A common critique: "your findings only work because plankton are transparent."
+This script tests the frequency-domain framework on ANY imaging dataset, not
+just plankton. It can:
+  1. Run on parallel source/target directories (two different "cameras")
+  2. Simulate a second "instrument" from a single dataset using a deterministic
+     acquisition transform (resize method + gamma + JPEG compression)
 
-  1. Test the central claim on NON-plankton biological imaging (refute the
-     "only works because plankton are transparent" objection).
-  2. Fix two confounds identified in the audit:
-       (a) Preprocessing: uses Chen's Proportional-Padding pipeline (Pipeline A)
-           consistently, instead of the aspect-ratio-squashing direct resize
-           used by the original masking scripts.
-       (b) Domain-accuracy metric: the original measured "domain accuracy" as a
-           classifier on CLS features of a model TRAINED ON THE SOURCE domain,
-           which conflates instrument identity with in-distribution-vs-OOD status
-           (baseline ~80% even with no masking). Here, "domain accuracy" is an
-           amplitude-feature classifier on HELD-OUT images from BOTH domains
-           (Exp-1 style), and we report the DELTA over the no-masking baseline.
-  3. Use the SAME band definition as the Fourier analysis (configurable edges,
-     defaulting to the paper's bins 0-22 / 22-44 / 44+), instead of the
-     fraction-of-Nyquist annuli (28-84) that the original masking used.
+The simulated-domain mode is itself an on-thesis manipulation: it injects a
+realistic instrument signature into the frequency domain, letting us test
+the framework without needing a second actual camera.
 
-It does NOT modify any existing script. It is fully self-contained and
-parameterised so it can point at plankton OR non-plankton data with no code
-change.
+WHY IT MATTERS:
+  If the frequency-domain separation of species info (low freq) from instrument
+  artifacts (mid freq) holds across datasets, it's a general principle -- not a
+  plankton-specific coincidence.
 
-DATA FORMAT EXPECTED
---------------------
-Two parallel directories (source / target "instruments"/acquisitions), each::
+Usage:
+  # Plankton cross-instrument:
+  python code/09_generality_test.py \
+      --source data/cross_instrument/train/DataShift_IFCB \
+      --target data/cross_instrument/test/DataShift_ZooScan \
+      --tag plankton_cleaned --epochs 15
 
-    <root>/<domain>/<class_name>/*.png   (or .jpg/.tif/.bmp)
+  # Non-plankton with simulated second domain:
+  python code/09_generality_test.py \
+      --source /path/to/any/dataset --simulate-domains \
+      --tag my_dataset_generality --epochs 15
 
-Classes present in BOTH domains are used automatically (intersection). For a
-non-plankton generality test with a single acquisition, you may instead pass
-``--simulate-domains`` to synthesize a second "instrument" via a deterministic
-acquisition transform (resize-method + gamma + JPEG), which is itself an
-on-thesis manipulation (it *is* an instrument signature in frequency space).
-
-USAGE EXAMPLES
---------------
-Plankton (reproduce the cleaned causal table, proportional padding):
-    python experiment_frequency_decomposition_generality.py \
-        --source data/cross_instrument/train/DataShift_IFCB \
-        --target data/cross_instrument/test/DataShift_ZooScan \
-        --tag plankton_cleaned --epochs 15
-
-Non-plankton generality (e.g. BBBC cell phenotypes, single acquisition -> simulated second domain):
-    python experiment_frequency_decomposition_generality.py \
-        --source /data/BBBC021/images --simulate-domains \
-        --tag bbbc021_generality --epochs 15
-
-OUTPUT
-------
-results/generality/<tag>/frequency_decomposition.json  + a per-band table.
+Output: results/generality/<tag>/frequency_decomposition.json
 """
 
 import argparse

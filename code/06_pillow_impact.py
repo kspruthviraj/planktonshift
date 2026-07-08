@@ -1,13 +1,24 @@
 """
-run_pillow_impact_corrected.py — Pillow version impact with FIXED accuracy weighting.
+06_pillow_impact.py — Does a software library update silently change your images?
 
-FIX (P0-5):
-  - The original computed micro accuracy as sum(v*1000)/sum(1000), assuming
-    every OOD day has exactly 1000 images. OOD3 has only 522. This script uses
-    the ACTUAL per-day image counts for proper micro-averaging.
-  - Reports macro AND correctly-weighted micro accuracy.
-  - Adds a per-image paired sign test (McNemar) between bicubic and nearest.
-  - Uses vendored data paths (no external dependencies).
+STEP 6: PILLOW LIBRARY VERSION IMPACT
+======================================
+
+In 2020, the Pillow image library (used by virtually all Python image
+processing pipelines) changed its default resize filter from nearest-
+neighbour to bicubic interpolation. This means that running the exact same
+code on the exact same images produces different pixel values depending on
+which Pillow version is installed — a "silent pipeline drift."
+
+This script measures:
+  1. How many pixels change between Pillow 6.x and 7.0 processing
+  2. Whether those changes affect classification accuracy on 10 OOD days
+  3. Whether the difference is statistically significant (McNemar test)
+
+WHY IT MATTERS:
+  For monitoring networks that compare results across years, even tiny pixel
+  changes can break temporal comparability. This is a reproducibility concern
+  that affects any long-running automated monitoring system.
 
 Output: results/tier1_corrected/pillow_impact.json
 """
