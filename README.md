@@ -179,6 +179,23 @@ The analysis pipeline uses **both** grayscale and per-channel RGB, depending on 
 
 **Bottom line:** RGB gives +1.3% where it matters (domain classification, OOD accuracy). Grayscale is used for mechanistic experiments where a single 2D decomposition is needed.
 
+### Temporal OOD Performance Progression (ZooLake, 10 days, 35 classes)
+
+This table shows how each improvement accumulates. All use the same 3-model BEiT geometric ensemble and Chen's proportional-padding preprocessing.
+
+| Configuration | TTA | Macro OOD Accuracy | vs Chen's BEsT (83.05%) |
+|--------------|-----|--------------------|------------------------|
+| Chen baseline (no SBA) | No | **81.65%** | -1.40% |
+| Grayscale SBA finetuned | No | **82.11%** | -0.94% |
+| Grayscale SBA finetuned | Yes (4 rotations) | **82.51%** | -0.54% |
+| Per-channel RGB SBA finetuned | Yes (4 rotations) | **83.19%** | **+0.14%** |
+
+Key observations:
+- **Grayscale SBA** (no TTA) improves over baseline by +0.46% (81.65% -> 82.11%)
+- **TTA** adds +0.40% (82.11% -> 82.51%)
+- **Per-channel RGB** (vs grayscale) adds +0.68% (82.51% -> 83.19%)
+- The per-channel RGB gain (+0.68%) is larger than the grayscale SBA gain (+0.46%), confirming that colour carries significant domain information
+
 ---
 
 ## Data Setup
